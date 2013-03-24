@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		549D18FE16FF985200EE05BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FD16FF985200EE05BF /* UIKit.framework */; };
+		549D190016FF985200EE05BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FF16FF985200EE05BF /* Foundation.framework */; };
+		549D190216FF985200EE05BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D190116FF985200EE05BF /* CoreGraphics.framework */; };
+		549D190816FF985200EE05BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 549D190616FF985200EE05BF /* InfoPlist.strings */; };
+		549D190A16FF985200EE05BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D190916FF985200EE05BF /* main.m */; };
+		549D190E16FF985200EE05BF /* PCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D190D16FF985200EE05BF /* PCAppDelegate.m */; };
+		549D191716FF985200EE05BF /* PCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D191616FF985200EE05BF /* PCViewController.m */; };
+		549D192216FF985300EE05BF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D192116FF985300EE05BF /* SenTestingKit.framework */; };
+		549D192316FF985300EE05BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FD16FF985200EE05BF /* UIKit.framework */; };
+		549D192416FF985300EE05BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FF16FF985200EE05BF /* Foundation.framework */; };
+		549D192C16FF985300EE05BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 549D192A16FF985300EE05BF /* InfoPlist.strings */; };
+		549D192F16FF985300EE05BF /* ProportionCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D192E16FF985300EE05BF /* ProportionCalculatorTests.m */; };
+		549D193D16FF98A300EE05BF /* PCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D193C16FF98A300EE05BF /* PCHomeViewController.m */; };
+		549D194816FF992500EE05BF /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D194116FF992500EE05BF /* UIColor+Tools.m */; };
+		549D194916FF992500EE05BF /* UILabel+DynamicHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D194316FF992500EE05BF /* UILabel+DynamicHeight.m */; };
+		549D194A16FF992500EE05BF /* UIView+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D194516FF992500EE05BF /* UIView+Effects.m */; };
+		549D194B16FF992500EE05BF /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D194716FF992500EE05BF /* UIView+Layout.m */; };
+		549D194F16FF9B7800EE05BF /* PCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D194E16FF9B7800EE05BF /* PCView.m */; };
+		549D195316FF9C4300EE05BF /* PCProportionCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D195216FF9C4300EE05BF /* PCProportionCalculatorView.m */; };
+		549D195616FF9C8F00EE05BF /* UIImage+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D195516FF9C8E00EE05BF /* UIImage+Tools.m */; };
+		549D195716FF9C8F00EE05BF /* UIImage+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D195516FF9C8E00EE05BF /* UIImage+Tools.m */; };
+		549D195916FF9CB000EE05BF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D195816FF9CB000EE05BF /* QuartzCore.framework */; };
+		549D196016FF9CC900EE05BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D195D16FF9CC900EE05BF /* Default-568h@2x.png */; };
+		549D196116FF9CC900EE05BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D195E16FF9CC900EE05BF /* Default.png */; };
+		549D196216FF9CC900EE05BF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D195F16FF9CC900EE05BF /* Default@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		549D192516FF985300EE05BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 549D18F216FF985200EE05BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 549D18F916FF985200EE05BF;
+			remoteInfo = ProportionCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		549D18FA16FF985200EE05BF /* ProportionCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProportionCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		549D18FD16FF985200EE05BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		549D18FF16FF985200EE05BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		549D190116FF985200EE05BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		549D190516FF985200EE05BF /* ProportionCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProportionCalculator-Info.plist"; sourceTree = "<group>"; };
+		549D190716FF985200EE05BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		549D190916FF985200EE05BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		549D190B16FF985200EE05BF /* ProportionCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProportionCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		549D190C16FF985200EE05BF /* PCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCAppDelegate.h; sourceTree = "<group>"; };
+		549D190D16FF985200EE05BF /* PCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCAppDelegate.m; sourceTree = "<group>"; };
+		549D191516FF985200EE05BF /* PCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCViewController.h; sourceTree = "<group>"; };
+		549D191616FF985200EE05BF /* PCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCViewController.m; sourceTree = "<group>"; };
+		549D192016FF985300EE05BF /* ProportionCalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProportionCalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		549D192116FF985300EE05BF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		549D192916FF985300EE05BF /* ProportionCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProportionCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		549D192B16FF985300EE05BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		549D192D16FF985300EE05BF /* ProportionCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProportionCalculatorTests.h; sourceTree = "<group>"; };
+		549D192E16FF985300EE05BF /* ProportionCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProportionCalculatorTests.m; sourceTree = "<group>"; };
+		549D193B16FF98A300EE05BF /* PCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCHomeViewController.h; sourceTree = "<group>"; };
+		549D193C16FF98A300EE05BF /* PCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCHomeViewController.m; sourceTree = "<group>"; };
+		549D194016FF992500EE05BF /* UIColor+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tools.h"; sourceTree = "<group>"; };
+		549D194116FF992500EE05BF /* UIColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
+		549D194216FF992500EE05BF /* UILabel+DynamicHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DynamicHeight.h"; sourceTree = "<group>"; };
+		549D194316FF992500EE05BF /* UILabel+DynamicHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DynamicHeight.m"; sourceTree = "<group>"; };
+		549D194416FF992500EE05BF /* UIView+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Effects.h"; sourceTree = "<group>"; };
+		549D194516FF992500EE05BF /* UIView+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Effects.m"; sourceTree = "<group>"; };
+		549D194616FF992500EE05BF /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		549D194716FF992500EE05BF /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		549D194D16FF9B7800EE05BF /* PCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCView.h; sourceTree = "<group>"; };
+		549D194E16FF9B7800EE05BF /* PCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCView.m; sourceTree = "<group>"; };
+		549D195116FF9C4300EE05BF /* PCProportionCalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCProportionCalculatorView.h; sourceTree = "<group>"; };
+		549D195216FF9C4300EE05BF /* PCProportionCalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCProportionCalculatorView.m; sourceTree = "<group>"; };
+		549D195416FF9C8E00EE05BF /* UIImage+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tools.h"; sourceTree = "<group>"; };
+		549D195516FF9C8E00EE05BF /* UIImage+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tools.m"; sourceTree = "<group>"; };
+		549D195816FF9CB000EE05BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		549D195D16FF9CC900EE05BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		549D195E16FF9CC900EE05BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		549D195F16FF9CC900EE05BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		549D18F716FF985200EE05BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549D195916FF9CB000EE05BF /* QuartzCore.framework in Frameworks */,
+				549D18FE16FF985200EE05BF /* UIKit.framework in Frameworks */,
+				549D190016FF985200EE05BF /* Foundation.framework in Frameworks */,
+				549D190216FF985200EE05BF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549D191C16FF985300EE05BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549D192216FF985300EE05BF /* SenTestingKit.framework in Frameworks */,
+				549D192316FF985300EE05BF /* UIKit.framework in Frameworks */,
+				549D192416FF985300EE05BF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		549D18F116FF985200EE05BF = {
+			isa = PBXGroup;
+			children = (
+				549D190316FF985200EE05BF /* ProportionCalculator */,
+				549D190416FF985200EE05BF /* Supporting Files */,
+				549D192716FF985300EE05BF /* ProportionCalculatorTests */,
+				549D18FC16FF985200EE05BF /* Frameworks */,
+				549D18FB16FF985200EE05BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		549D18FB16FF985200EE05BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				549D18FA16FF985200EE05BF /* ProportionCalculator.app */,
+				549D192016FF985300EE05BF /* ProportionCalculatorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		549D18FC16FF985200EE05BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				549D195816FF9CB000EE05BF /* QuartzCore.framework */,
+				549D18FD16FF985200EE05BF /* UIKit.framework */,
+				549D18FF16FF985200EE05BF /* Foundation.framework */,
+				549D190116FF985200EE05BF /* CoreGraphics.framework */,
+				549D192116FF985300EE05BF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		549D190316FF985200EE05BF /* ProportionCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				549D193F16FF990A00EE05BF /* Categories */,
+				549D193E16FF990400EE05BF /* Views */,
+				549D193816FF986900EE05BF /* Controllers */,
+				549D190C16FF985200EE05BF /* PCAppDelegate.h */,
+				549D190D16FF985200EE05BF /* PCAppDelegate.m */,
+			);
+			path = ProportionCalculator;
+			sourceTree = "<group>";
+		};
+		549D190416FF985200EE05BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				549D195A16FF9CC900EE05BF /* Assets */,
+				549D190516FF985200EE05BF /* ProportionCalculator-Info.plist */,
+				549D190616FF985200EE05BF /* InfoPlist.strings */,
+				549D190916FF985200EE05BF /* main.m */,
+				549D190B16FF985200EE05BF /* ProportionCalculator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = ProportionCalculator;
+			sourceTree = "<group>";
+		};
+		549D192716FF985300EE05BF /* ProportionCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				549D192D16FF985300EE05BF /* ProportionCalculatorTests.h */,
+				549D192E16FF985300EE05BF /* ProportionCalculatorTests.m */,
+				549D192816FF985300EE05BF /* Supporting Files */,
+			);
+			path = ProportionCalculatorTests;
+			sourceTree = "<group>";
+		};
+		549D192816FF985300EE05BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				549D192916FF985300EE05BF /* ProportionCalculatorTests-Info.plist */,
+				549D192A16FF985300EE05BF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		549D193816FF986900EE05BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				549D193A16FF988200EE05BF /* Home */,
+				549D193916FF987C00EE05BF /* Basic */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		549D193916FF987C00EE05BF /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				549D191516FF985200EE05BF /* PCViewController.h */,
+				549D191616FF985200EE05BF /* PCViewController.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		549D193A16FF988200EE05BF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				549D193B16FF98A300EE05BF /* PCHomeViewController.h */,
+				549D193C16FF98A300EE05BF /* PCHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		549D193E16FF990400EE05BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				549D194C16FF9B5500EE05BF /* Proportion calculator */,
+				549D195016FF9B7B00EE05BF /* Basic */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		549D193F16FF990A00EE05BF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				549D195416FF9C8E00EE05BF /* UIImage+Tools.h */,
+				549D195516FF9C8E00EE05BF /* UIImage+Tools.m */,
+				549D194016FF992500EE05BF /* UIColor+Tools.h */,
+				549D194116FF992500EE05BF /* UIColor+Tools.m */,
+				549D194216FF992500EE05BF /* UILabel+DynamicHeight.h */,
+				549D194316FF992500EE05BF /* UILabel+DynamicHeight.m */,
+				549D194416FF992500EE05BF /* UIView+Effects.h */,
+				549D194516FF992500EE05BF /* UIView+Effects.m */,
+				549D194616FF992500EE05BF /* UIView+Layout.h */,
+				549D194716FF992500EE05BF /* UIView+Layout.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		549D194C16FF9B5500EE05BF /* Proportion calculator */ = {
+			isa = PBXGroup;
+			children = (
+				549D195116FF9C4300EE05BF /* PCProportionCalculatorView.h */,
+				549D195216FF9C4300EE05BF /* PCProportionCalculatorView.m */,
+			);
+			name = "Proportion calculator";
+			sourceTree = "<group>";
+		};
+		549D195016FF9B7B00EE05BF /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				549D194D16FF9B7800EE05BF /* PCView.h */,
+				549D194E16FF9B7800EE05BF /* PCView.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		549D195A16FF9CC900EE05BF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				549D195B16FF9CC900EE05BF /* Images */,
+				549D195C16FF9CC900EE05BF /* System */,
+			);
+			name = Assets;
+			path = ../../Assets;
+			sourceTree = "<group>";
+		};
+		549D195B16FF9CC900EE05BF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		549D195C16FF9CC900EE05BF /* System */ = {
+			isa = PBXGroup;
+			children = (
+				549D195D16FF9CC900EE05BF /* Default-568h@2x.png */,
+				549D195E16FF9CC900EE05BF /* Default.png */,
+				549D195F16FF9CC900EE05BF /* Default@2x.png */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		549D18F916FF985200EE05BF /* ProportionCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549D193216FF985300EE05BF /* Build configuration list for PBXNativeTarget "ProportionCalculator" */;
+			buildPhases = (
+				549D18F616FF985200EE05BF /* Sources */,
+				549D18F716FF985200EE05BF /* Frameworks */,
+				549D18F816FF985200EE05BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProportionCalculator;
+			productName = ProportionCalculator;
+			productReference = 549D18FA16FF985200EE05BF /* ProportionCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		549D191F16FF985300EE05BF /* ProportionCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549D193516FF985300EE05BF /* Build configuration list for PBXNativeTarget "ProportionCalculatorTests" */;
+			buildPhases = (
+				549D191B16FF985300EE05BF /* Sources */,
+				549D191C16FF985300EE05BF /* Frameworks */,
+				549D191D16FF985300EE05BF /* Resources */,
+				549D191E16FF985300EE05BF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				549D192616FF985300EE05BF /* PBXTargetDependency */,
+			);
+			name = ProportionCalculatorTests;
+			productName = ProportionCalculatorTests;
+			productReference = 549D192016FF985300EE05BF /* ProportionCalculatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		549D18F216FF985200EE05BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PC;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Fuerte Innovations";
+			};
+			buildConfigurationList = 549D18F516FF985200EE05BF /* Build configuration list for PBXProject "ProportionCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 549D18F116FF985200EE05BF;
+			productRefGroup = 549D18FB16FF985200EE05BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				549D18F916FF985200EE05BF /* ProportionCalculator */,
+				549D191F16FF985300EE05BF /* ProportionCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		549D18F816FF985200EE05BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549D190816FF985200EE05BF /* InfoPlist.strings in Resources */,
+				549D196016FF9CC900EE05BF /* Default-568h@2x.png in Resources */,
+				549D196116FF9CC900EE05BF /* Default.png in Resources */,
+				549D196216FF9CC900EE05BF /* Default@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549D191D16FF985300EE05BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549D192C16FF985300EE05BF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		549D191E16FF985300EE05BF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		549D18F616FF985200EE05BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549D190A16FF985200EE05BF /* main.m in Sources */,
+				549D190E16FF985200EE05BF /* PCAppDelegate.m in Sources */,
+				549D191716FF985200EE05BF /* PCViewController.m in Sources */,
+				549D193D16FF98A300EE05BF /* PCHomeViewController.m in Sources */,
+				549D194816FF992500EE05BF /* UIColor+Tools.m in Sources */,
+				549D194916FF992500EE05BF /* UILabel+DynamicHeight.m in Sources */,
+				549D194A16FF992500EE05BF /* UIView+Effects.m in Sources */,
+				549D194B16FF992500EE05BF /* UIView+Layout.m in Sources */,
+				549D194F16FF9B7800EE05BF /* PCView.m in Sources */,
+				549D195316FF9C4300EE05BF /* PCProportionCalculatorView.m in Sources */,
+				549D195616FF9C8F00EE05BF /* UIImage+Tools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549D191B16FF985300EE05BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549D192F16FF985300EE05BF /* ProportionCalculatorTests.m in Sources */,
+				549D195716FF9C8F00EE05BF /* UIImage+Tools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		549D192616FF985300EE05BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 549D18F916FF985200EE05BF /* ProportionCalculator */;
+			targetProxy = 549D192516FF985300EE05BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		549D190616FF985200EE05BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				549D190716FF985200EE05BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		549D192A16FF985300EE05BF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				549D192B16FF985300EE05BF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		549D193016FF985300EE05BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		549D193116FF985300EE05BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		549D193316FF985300EE05BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		549D193416FF985300EE05BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		549D193616FF985300EE05BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProportionCalculator.app/ProportionCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ProportionCalculatorTests/ProportionCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		549D193716FF985300EE05BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProportionCalculator.app/ProportionCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ProportionCalculatorTests/ProportionCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		549D18F516FF985200EE05BF /* Build configuration list for PBXProject "ProportionCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549D193016FF985300EE05BF /* Debug */,
+				549D193116FF985300EE05BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		549D193216FF985300EE05BF /* Build configuration list for PBXNativeTarget "ProportionCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549D193316FF985300EE05BF /* Debug */,
+				549D193416FF985300EE05BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		549D193516FF985300EE05BF /* Build configuration list for PBXNativeTarget "ProportionCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549D193616FF985300EE05BF /* Debug */,
+				549D193716FF985300EE05BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 549D18F216FF985200EE05BF /* Project object */;
+}
