@@ -32,6 +32,20 @@
 		549D196016FF9CC900EE05BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D195D16FF9CC900EE05BF /* Default-568h@2x.png */; };
 		549D196116FF9CC900EE05BF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D195E16FF9CC900EE05BF /* Default.png */; };
 		549D196216FF9CC900EE05BF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D195F16FF9CC900EE05BF /* Default@2x.png */; };
+		549D196616FF9D9600EE05BF /* PCLang.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D196516FF9D9600EE05BF /* PCLang.m */; };
+		549D196D16FFA1D900EE05BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 549D197016FFA1D900EE05BF /* Localizable.strings */; };
+		549D196E16FFA1D900EE05BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 549D197016FFA1D900EE05BF /* Localizable.strings */; };
+		549D197616FFA5DD00EE05BF /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D197516FFA5DD00EE05BF /* libFlurry.a */; };
+		549D197716FFA5DD00EE05BF /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D197516FFA5DD00EE05BF /* libFlurry.a */; };
+		549D197916FFA70400EE05BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D197816FFA70400EE05BF /* SystemConfiguration.framework */; };
+		549D198116FFAF1300EE05BF /* PC_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197B16FFAF1300EE05BF /* PC_arrow_down.png */; };
+		549D198316FFAF1300EE05BF /* PC_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197C16FFAF1300EE05BF /* PC_arrow_down@2x.png */; };
+		549D198516FFAF1300EE05BF /* PC_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197D16FFAF1300EE05BF /* PC_arrow_up.png */; };
+		549D198716FFAF1300EE05BF /* PC_arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197E16FFAF1300EE05BF /* PC_arrow_up@2x.png */; };
+		549D198916FFAF1300EE05BF /* PC_result_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197F16FFAF1300EE05BF /* PC_result_field.png */; };
+		549D198B16FFAF1300EE05BF /* PC_result_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D198016FFAF1300EE05BF /* PC_result_field@2x.png */; };
+		549D199016FFB92200EE05BF /* PCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D198F16FFB92200EE05BF /* PCTextField.m */; };
+		549D199116FFB92200EE05BF /* PCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D198F16FFB92200EE05BF /* PCTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +97,23 @@
 		549D195D16FF9CC900EE05BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		549D195E16FF9CC900EE05BF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		549D195F16FF9CC900EE05BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		549D196416FF9D9600EE05BF /* PCLang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLang.h; sourceTree = "<group>"; };
+		549D196516FF9D9600EE05BF /* PCLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLang.m; sourceTree = "<group>"; };
+		549D196B16FFA1CE00EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		549D196C16FFA1CE00EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		549D197116FFA1E600EE05BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		549D197416FFA5DD00EE05BF /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		549D197516FFA5DD00EE05BF /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		549D197816FFA70400EE05BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		549D197A16FFAC3600EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = file; name = "cs-CZ"; path = "cs-CZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		549D197B16FFAF1300EE05BF /* PC_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_arrow_down.png; sourceTree = "<group>"; };
+		549D197C16FFAF1300EE05BF /* PC_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_arrow_down@2x.png"; sourceTree = "<group>"; };
+		549D197D16FFAF1300EE05BF /* PC_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_arrow_up.png; sourceTree = "<group>"; };
+		549D197E16FFAF1300EE05BF /* PC_arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_arrow_up@2x.png"; sourceTree = "<group>"; };
+		549D197F16FFAF1300EE05BF /* PC_result_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_result_field.png; sourceTree = "<group>"; };
+		549D198016FFAF1300EE05BF /* PC_result_field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_result_field@2x.png"; sourceTree = "<group>"; };
+		549D198E16FFB92200EE05BF /* PCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTextField.h; sourceTree = "<group>"; };
+		549D198F16FFB92200EE05BF /* PCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +121,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549D197916FFA70400EE05BF /* SystemConfiguration.framework in Frameworks */,
 				549D195916FF9CB000EE05BF /* QuartzCore.framework in Frameworks */,
 				549D18FE16FF985200EE05BF /* UIKit.framework in Frameworks */,
 				549D190016FF985200EE05BF /* Foundation.framework in Frameworks */,
 				549D190216FF985200EE05BF /* CoreGraphics.framework in Frameworks */,
+				549D197616FFA5DD00EE05BF /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +137,7 @@
 				549D192216FF985300EE05BF /* SenTestingKit.framework in Frameworks */,
 				549D192316FF985300EE05BF /* UIKit.framework in Frameworks */,
 				549D192416FF985300EE05BF /* Foundation.framework in Frameworks */,
+				549D197716FFA5DD00EE05BF /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +167,7 @@
 		549D18FC16FF985200EE05BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				549D197816FFA70400EE05BF /* SystemConfiguration.framework */,
 				549D195816FF9CB000EE05BF /* QuartzCore.framework */,
 				549D18FD16FF985200EE05BF /* UIKit.framework */,
 				549D18FF16FF985200EE05BF /* Foundation.framework */,
@@ -145,7 +180,9 @@
 		549D190316FF985200EE05BF /* ProportionCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				549D197216FFA5DB00EE05BF /* Thirdparty */,
 				549D193F16FF990A00EE05BF /* Categories */,
+				549D196316FF9D7200EE05BF /* Libs */,
 				549D193E16FF990400EE05BF /* Views */,
 				549D193816FF986900EE05BF /* Controllers */,
 				549D190C16FF985200EE05BF /* PCAppDelegate.h */,
@@ -216,6 +253,7 @@
 		549D193E16FF990400EE05BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				549D198D16FFB90400EE05BF /* Text field */,
 				549D194C16FF9B5500EE05BF /* Proportion calculator */,
 				549D195016FF9B7B00EE05BF /* Basic */,
 			);
@@ -260,6 +298,7 @@
 		549D195A16FF9CC900EE05BF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				549D196716FF9E1800EE05BF /* Languages */,
 				549D195B16FF9CC900EE05BF /* Images */,
 				549D195C16FF9CC900EE05BF /* System */,
 			);
@@ -270,6 +309,12 @@
 		549D195B16FF9CC900EE05BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				549D197B16FFAF1300EE05BF /* PC_arrow_down.png */,
+				549D197C16FFAF1300EE05BF /* PC_arrow_down@2x.png */,
+				549D197D16FFAF1300EE05BF /* PC_arrow_up.png */,
+				549D197E16FFAF1300EE05BF /* PC_arrow_up@2x.png */,
+				549D197F16FFAF1300EE05BF /* PC_result_field.png */,
+				549D198016FFAF1300EE05BF /* PC_result_field@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -282,6 +327,50 @@
 				549D195F16FF9CC900EE05BF /* Default@2x.png */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		549D196316FF9D7200EE05BF /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				549D196416FF9D9600EE05BF /* PCLang.h */,
+				549D196516FF9D9600EE05BF /* PCLang.m */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		549D196716FF9E1800EE05BF /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				549D197016FFA1D900EE05BF /* Localizable.strings */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		549D197216FFA5DB00EE05BF /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				549D197316FFA5DD00EE05BF /* Flurry */,
+			);
+			name = Thirdparty;
+			path = ../../Thirdparty;
+			sourceTree = "<group>";
+		};
+		549D197316FFA5DD00EE05BF /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				549D197416FFA5DD00EE05BF /* Flurry.h */,
+				549D197516FFA5DD00EE05BF /* libFlurry.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
+		549D198D16FFB90400EE05BF /* Text field */ = {
+			isa = PBXGroup;
+			children = (
+				549D198E16FFB92200EE05BF /* PCTextField.h */,
+				549D198F16FFB92200EE05BF /* PCTextField.m */,
+			);
+			name = "Text field";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +428,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"cs-CZ",
 			);
 			mainGroup = 549D18F116FF985200EE05BF;
 			productRefGroup = 549D18FB16FF985200EE05BF /* Products */;
@@ -360,6 +450,13 @@
 				549D196016FF9CC900EE05BF /* Default-568h@2x.png in Resources */,
 				549D196116FF9CC900EE05BF /* Default.png in Resources */,
 				549D196216FF9CC900EE05BF /* Default@2x.png in Resources */,
+				549D196D16FFA1D900EE05BF /* Localizable.strings in Resources */,
+				549D198116FFAF1300EE05BF /* PC_arrow_down.png in Resources */,
+				549D198316FFAF1300EE05BF /* PC_arrow_down@2x.png in Resources */,
+				549D198516FFAF1300EE05BF /* PC_arrow_up.png in Resources */,
+				549D198716FFAF1300EE05BF /* PC_arrow_up@2x.png in Resources */,
+				549D198916FFAF1300EE05BF /* PC_result_field.png in Resources */,
+				549D198B16FFAF1300EE05BF /* PC_result_field@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				549D192C16FF985300EE05BF /* InfoPlist.strings in Resources */,
+				549D196E16FFA1D900EE05BF /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +503,8 @@
 				549D194F16FF9B7800EE05BF /* PCView.m in Sources */,
 				549D195316FF9C4300EE05BF /* PCProportionCalculatorView.m in Sources */,
 				549D195616FF9C8F00EE05BF /* UIImage+Tools.m in Sources */,
+				549D196616FF9D9600EE05BF /* PCLang.m in Sources */,
+				549D199016FFB92200EE05BF /* PCTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +514,7 @@
 			files = (
 				549D192F16FF985300EE05BF /* ProportionCalculatorTests.m in Sources */,
 				549D195716FF9C8F00EE05BF /* UIImage+Tools.m in Sources */,
+				549D199116FFB92200EE05BF /* PCTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +533,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				549D190716FF985200EE05BF /* en */,
+				549D196B16FFA1CE00EE05BF /* cs-CZ */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -440,8 +542,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				549D192B16FF985300EE05BF /* en */,
+				549D196C16FFA1CE00EE05BF /* cs-CZ */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		549D197016FFA1D900EE05BF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				549D197116FFA1E600EE05BF /* en */,
+				549D197A16FFAC3600EE05BF /* cs-CZ */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -509,6 +621,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -520,6 +637,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -536,6 +658,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculatorTests/ProportionCalculatorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -553,6 +679,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculatorTests/ProportionCalculatorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

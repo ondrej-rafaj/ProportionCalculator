@@ -8,6 +8,16 @@
 
 #import "PCView.h"
 
+
+typedef enum {
+    PCProportionCalculatorViewPropTypeProportional,
+    PCProportionCalculatorViewPropTypeDisproportional
+} PCProportionCalculatorViewPropType;
+
+
 @interface PCProportionCalculatorView : PCView
+
+@property (nonatomic, readonly) PCProportionCalculatorViewPropType propType;
+
 
 @end

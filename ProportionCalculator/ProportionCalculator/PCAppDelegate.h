@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class PCViewController;
+
+@class PCHomeViewController;
 
 @interface PCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PCHomeViewController *viewController;
 
-@property (strong, nonatomic) PCViewController *viewController;
 
 @end

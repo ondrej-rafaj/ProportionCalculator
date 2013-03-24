@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ProportionCalculator
+
+  Created by Ondrej Rafaj on 24/03/2013.
+  Copyright (c) 2013 Fuerte Innovations. All rights reserved.
+*/
+
+"PROPORT" = "Přímá úměra"
+"DISPROP" = "Nepřímá úměra"

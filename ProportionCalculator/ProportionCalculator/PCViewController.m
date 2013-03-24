@@ -11,6 +11,8 @@
 
 @interface PCViewController ()
 
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
 @end
 
 
@@ -31,15 +33,6 @@
     return self.view.height;
 }
 
-//- (CGRect)fullscreenFrame {
-//    if (_isLandscape) {
-//        return CGRectMake(0, 0, , 748);
-//    }
-//    else {
-//        return CGRectMake(0, 0, 768, 1004);
-//    }
-//}
-
 - (void)layoutElements {
     
 }
@@ -57,7 +50,12 @@
 #pragma mark Settings
 
 - (void)setBackgroundImage:(NSString *)imageName {
-    
+    UIImage *img = [UIImage imageNamed:imageName];
+    _backgroundImageView = [[UIImageView alloc] initWithImage:img];
+    if (_backgroundImageView.height > self.view.height) {
+        [_backgroundImageView setYOrigin:-20];
+    }
+    [self.view addSubview:_backgroundImageView];
 }
 
 #pragma mark View lifecycle
