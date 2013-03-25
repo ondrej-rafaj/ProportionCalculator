@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PCTextField : UITextField
+
+@interface PCValueTextField : UITextField
+
+- (void)disable:(BOOL)disable;
+
 
 @end

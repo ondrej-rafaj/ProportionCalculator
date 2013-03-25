@@ -15,7 +15,7 @@ typedef enum {
 } PCProportionCalculatorViewPropType;
 
 
-@interface PCProportionCalculatorView : PCView
+@interface PCProportionCalculatorView : PCView <UITextFieldDelegate>
 
 @property (nonatomic, readonly) PCProportionCalculatorViewPropType propType;
 

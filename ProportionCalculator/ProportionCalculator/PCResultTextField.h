@@ -1,5 +1,5 @@
 //
-//  PCView.h
+//  PCResultTextField.h
 //  ProportionCalculator
 //
 //  Created by Ondrej Rafaj on 24/03/2013.
@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface PCView : UIView
-
-- (void)createAllElements;
-
-- (BOOL)isRetina;
-- (BOOL)isBigPhone;
-
+@interface PCResultTextField : UITextField
 
 @end

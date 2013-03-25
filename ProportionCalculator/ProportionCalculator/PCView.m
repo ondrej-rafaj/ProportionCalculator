@@ -24,6 +24,10 @@
     return ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0));
 }
 
+- (BOOL)isBigPhone {
+    return ([[UIScreen mainScreen] bounds].size.height == 568);
+}
+
 #pragma mark Initialization
 
 - (id)initWithFrame:(CGRect)frame {

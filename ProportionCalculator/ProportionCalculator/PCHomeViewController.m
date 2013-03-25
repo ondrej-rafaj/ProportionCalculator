@@ -26,6 +26,7 @@
     [super createAllElements];
     
     [super setBackgroundImage:([super isBigPhone] ? @"Default-568h" : @"Default")];
+    [self.view setBackgroundColor:[UIColor colorWithHexString:@"D7D7D7"]];
     
     _proportionCalculatorView = [[PCProportionCalculatorView alloc] initWithFrame:self.view.bounds];
     [_proportionCalculatorView setAlpha:0];

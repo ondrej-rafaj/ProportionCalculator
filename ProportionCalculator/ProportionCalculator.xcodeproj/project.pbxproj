@@ -44,8 +44,12 @@
 		549D198716FFAF1300EE05BF /* PC_arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197E16FFAF1300EE05BF /* PC_arrow_up@2x.png */; };
 		549D198916FFAF1300EE05BF /* PC_result_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D197F16FFAF1300EE05BF /* PC_result_field.png */; };
 		549D198B16FFAF1300EE05BF /* PC_result_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D198016FFAF1300EE05BF /* PC_result_field@2x.png */; };
-		549D199016FFB92200EE05BF /* PCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D198F16FFB92200EE05BF /* PCTextField.m */; };
-		549D199116FFB92200EE05BF /* PCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D198F16FFB92200EE05BF /* PCTextField.m */; };
+		549D199016FFB92200EE05BF /* PCValueTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D198F16FFB92200EE05BF /* PCValueTextField.m */; };
+		549D199416FFB9DE00EE05BF /* PCResultTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 549D199316FFB9DE00EE05BF /* PCResultTextField.m */; };
+		549D199B16FFD12D00EE05BF /* PC_bcg_segment_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199716FFD12D00EE05BF /* PC_bcg_segment_gray.png */; };
+		549D199C16FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */; };
+		549D199D16FFD12D00EE05BF /* PC_bcg_segment_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199916FFD12D00EE05BF /* PC_bcg_segment_green.png */; };
+		549D199E16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199A16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +116,14 @@
 		549D197E16FFAF1300EE05BF /* PC_arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_arrow_up@2x.png"; sourceTree = "<group>"; };
 		549D197F16FFAF1300EE05BF /* PC_result_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_result_field.png; sourceTree = "<group>"; };
 		549D198016FFAF1300EE05BF /* PC_result_field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_result_field@2x.png"; sourceTree = "<group>"; };
-		549D198E16FFB92200EE05BF /* PCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTextField.h; sourceTree = "<group>"; };
-		549D198F16FFB92200EE05BF /* PCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTextField.m; sourceTree = "<group>"; };
+		549D198E16FFB92200EE05BF /* PCValueTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCValueTextField.h; sourceTree = "<group>"; };
+		549D198F16FFB92200EE05BF /* PCValueTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCValueTextField.m; sourceTree = "<group>"; };
+		549D199216FFB9DE00EE05BF /* PCResultTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCResultTextField.h; sourceTree = "<group>"; };
+		549D199316FFB9DE00EE05BF /* PCResultTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCResultTextField.m; sourceTree = "<group>"; };
+		549D199716FFD12D00EE05BF /* PC_bcg_segment_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_bcg_segment_gray.png; sourceTree = "<group>"; };
+		549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_bcg_segment_gray@2x.png"; sourceTree = "<group>"; };
+		549D199916FFD12D00EE05BF /* PC_bcg_segment_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_bcg_segment_green.png; sourceTree = "<group>"; };
+		549D199A16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_bcg_segment_green@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,7 +263,7 @@
 		549D193E16FF990400EE05BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				549D198D16FFB90400EE05BF /* Text field */,
+				549D198D16FFB90400EE05BF /* Text fields */,
 				549D194C16FF9B5500EE05BF /* Proportion calculator */,
 				549D195016FF9B7B00EE05BF /* Basic */,
 			);
@@ -309,6 +319,10 @@
 		549D195B16FF9CC900EE05BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				549D199716FFD12D00EE05BF /* PC_bcg_segment_gray.png */,
+				549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */,
+				549D199916FFD12D00EE05BF /* PC_bcg_segment_green.png */,
+				549D199A16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png */,
 				549D197B16FFAF1300EE05BF /* PC_arrow_down.png */,
 				549D197C16FFAF1300EE05BF /* PC_arrow_down@2x.png */,
 				549D197D16FFAF1300EE05BF /* PC_arrow_up.png */,
@@ -364,13 +378,15 @@
 			path = Flurry;
 			sourceTree = "<group>";
 		};
-		549D198D16FFB90400EE05BF /* Text field */ = {
+		549D198D16FFB90400EE05BF /* Text fields */ = {
 			isa = PBXGroup;
 			children = (
-				549D198E16FFB92200EE05BF /* PCTextField.h */,
-				549D198F16FFB92200EE05BF /* PCTextField.m */,
+				549D198E16FFB92200EE05BF /* PCValueTextField.h */,
+				549D198F16FFB92200EE05BF /* PCValueTextField.m */,
+				549D199216FFB9DE00EE05BF /* PCResultTextField.h */,
+				549D199316FFB9DE00EE05BF /* PCResultTextField.m */,
 			);
-			name = "Text field";
+			name = "Text fields";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +473,10 @@
 				549D198716FFAF1300EE05BF /* PC_arrow_up@2x.png in Resources */,
 				549D198916FFAF1300EE05BF /* PC_result_field.png in Resources */,
 				549D198B16FFAF1300EE05BF /* PC_result_field@2x.png in Resources */,
+				549D199B16FFD12D00EE05BF /* PC_bcg_segment_gray.png in Resources */,
+				549D199C16FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png in Resources */,
+				549D199D16FFD12D00EE05BF /* PC_bcg_segment_green.png in Resources */,
+				549D199E16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +524,8 @@
 				549D195316FF9C4300EE05BF /* PCProportionCalculatorView.m in Sources */,
 				549D195616FF9C8F00EE05BF /* UIImage+Tools.m in Sources */,
 				549D196616FF9D9600EE05BF /* PCLang.m in Sources */,
-				549D199016FFB92200EE05BF /* PCTextField.m in Sources */,
+				549D199016FFB92200EE05BF /* PCValueTextField.m in Sources */,
+				549D199416FFB9DE00EE05BF /* PCResultTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +535,6 @@
 			files = (
 				549D192F16FF985300EE05BF /* ProportionCalculatorTests.m in Sources */,
 				549D195716FF9C8F00EE05BF /* UIImage+Tools.m in Sources */,
-				549D199116FFB92200EE05BF /* PCTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
