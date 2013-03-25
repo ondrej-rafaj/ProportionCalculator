@@ -7,7 +7,9 @@
 //
 
 #import "PCViewController.h"
+#import "PCProportionCalculatorView.h"
 
-@interface PCHomeViewController : PCViewController
+
+@interface PCHomeViewController : PCViewController <PCProportionCalculatorViewDelegate>
 
 @end

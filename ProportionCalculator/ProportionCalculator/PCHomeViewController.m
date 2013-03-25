@@ -7,7 +7,9 @@
 //
 
 #import "PCHomeViewController.h"
-#import "PCProportionCalculatorView.h"
+
+
+#define kPCHomeViewControllerMoveUpDistance             72
 
 
 @interface PCHomeViewController ()
@@ -29,6 +31,7 @@
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"D7D7D7"]];
     
     _proportionCalculatorView = [[PCProportionCalculatorView alloc] initWithFrame:self.view.bounds];
+    [_proportionCalculatorView setDelegate:self];
     [_proportionCalculatorView setAlpha:0];
     [self.view addSubview:_proportionCalculatorView];
 }
@@ -39,6 +42,21 @@
     [super viewDidAppear:animated];
     [UIView animateWithDuration:0.3 animations:^{
         [_proportionCalculatorView setAlpha:1];
+    }];
+}
+
+#pragma mark Proportional calculator view delegate methods
+
+- (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction {
+    [UIView animateWithDuration:0.3 animations:^{
+        if (direction == PCProportionCalculatorViewDirectionMoveUp) {
+            [self.backgroundImageView setYOrigin:-(kPCHomeViewControllerMoveUpDistance + 20)];
+            [_proportionCalculatorView setYOrigin:-kPCHomeViewControllerMoveUpDistance];
+        }
+        else {
+            [self.backgroundImageView setYOrigin:-20];
+            [_proportionCalculatorView setYOrigin:0];
+        }
     }];
 }
 

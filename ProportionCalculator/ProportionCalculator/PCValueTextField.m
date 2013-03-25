@@ -18,7 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setKeyboardAppearance:UIKeyboardAppearanceAlert];
-        [self setKeyboardType:UIKeyboardTypeNumberPad];
+        [self setKeyboardType:UIKeyboardTypeDecimalPad];
         [self setTextAlignment:NSTextAlignmentCenter];
         [self setFont:[UIFont boldSystemFontOfSize:35]];
         [self setMinimumFontSize:6];

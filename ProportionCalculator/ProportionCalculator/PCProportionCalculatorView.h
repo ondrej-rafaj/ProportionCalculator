@@ -14,10 +14,25 @@ typedef enum {
     PCProportionCalculatorViewPropTypeDisproportional
 } PCProportionCalculatorViewPropType;
 
+typedef enum {
+    PCProportionCalculatorViewDirectionMoveUp,
+    PCProportionCalculatorViewDirectionMoveDown
+} PCProportionCalculatorViewDirectionMove;
+
+
+@class PCProportionCalculatorView;
+
+@protocol PCProportionCalculatorViewDelegate <NSObject>
+
+- (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction;
+
+@end
+
 
 @interface PCProportionCalculatorView : PCView <UITextFieldDelegate>
 
 @property (nonatomic, readonly) PCProportionCalculatorViewPropType propType;
+@property (nonatomic, weak) id <PCProportionCalculatorViewDelegate> delegate;
 
 
 @end

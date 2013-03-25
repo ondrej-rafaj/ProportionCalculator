@@ -39,7 +39,7 @@
 @implementation PCProportionCalculatorView
 
 
-#pragma mark Calculations
+#pragma mark Calculations & related
 
 - (BOOL)allValuesAvailable {
     BOOL ok = YES;
@@ -105,15 +105,15 @@
         img = [UIImage imageNamed:@"PC_arrow_up"];
         yPos = 135;
     }
-    [UIView animateWithDuration:0.3 animations:^{
-        [_leftArrow setXOrigin:-11];
-        [_rightArrow setXOrigin:320];
+    [UIView animateWithDuration:0.15 animations:^{
+        [_leftArrow setAlpha:0];
+        [_rightArrow setAlpha:0];
     } completion:^(BOOL finished) {
         [_rightArrow setImage:img];
         [_rightArrow setYOrigin:yPos];
-        [UIView animateWithDuration:0.3 animations:^{
-            [_leftArrow setXOrigin:10];
-            [_rightArrow setXOrigin:300];
+        [UIView animateWithDuration:0.15 animations:^{
+            [_leftArrow setAlpha:1];
+            [_rightArrow setAlpha:1];
         }];
     }];
 }
@@ -125,10 +125,35 @@
         CGFloat c = [[_value3Field text] floatValue];
         CGFloat d = [[_value4Field text] floatValue];
         CGFloat x = 0;
-        if (_currentXField == 4) {
-            x = ((c * b) / a);
+        if (_propType == PCProportionCalculatorViewPropTypeProportional) {
+            if (_currentXField == 1) {
+                x = ((c * b) / d);
+            }
+            else if (_currentXField == 2) {
+                x = ((c * d) / c);
+            }
+            else if (_currentXField == 3) {
+                x = ((a * d) / b);
+            }
+            else if (_currentXField == 4) {
+                x = ((c * b) / a);
+            }
         }
-        [_resultField setText:[NSString stringWithFormat:@"%.3f", x]];
+        else {
+            if (_currentXField == 1) {
+                x = ((c * d) / b);
+            }
+            else if (_currentXField == 2) {
+                x = ((c * d) / a);
+            }
+            else if (_currentXField == 3) {
+                x = ((a * b) / d);
+            }
+            else if (_currentXField == 4) {
+                x = ((a * b) / c);
+            }
+        }
+        [_resultField setText:[NSString stringWithFormat:@"%.5g", x]];
     }
     else {
         [_resultField setText:nil];
@@ -138,9 +163,25 @@
 #pragma mark Creating elements
 
 - (void)createTypeSelector {
+    UIImage *segmentSelected = [[UIImage imageNamed:@"PC_bcg_segment_green"] stretchableImageWithLeftCapWidth:26 topCapHeight:26];
+    UIImage *segmentUnselected = [[UIImage imageNamed:@"PC_bcg_segment_gray"] stretchableImageWithLeftCapWidth:26 topCapHeight:26];
+    UIImage *emptyImg = [UIImage imageNamed:@"PC_transparent_1x48"];
+    
+    [[UISegmentedControl appearance] setBackgroundImage:segmentUnselected forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setBackgroundImage:segmentSelected forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:emptyImg forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:emptyImg forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:emptyImg forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
     _propType = PCProportionCalculatorViewPropTypeProportional;
     NSArray *itemArray = [NSArray arrayWithObjects:PCLangGet(@"PROPORT"), PCLangGet(@"DISPROP"), nil];
     _typeSelector = [[UISegmentedControl alloc] initWithItems:itemArray];
+    
+    UIFont *font = [UIFont boldSystemFontOfSize:14];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjects:@[font, [UIColor whiteColor], [UIColor clearColor]] forKeys:@[UITextAttributeFont, UITextAttributeTextColor, UITextAttributeTextShadowColor]];
+    [_typeSelector setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    [_typeSelector setTitleTextAttributes:attributes forState:UIControlStateHighlighted];
+    
     [_typeSelector addTarget:self action:@selector(didSwitchProportionType:) forControlEvents:UIControlEventValueChanged];
     [_typeSelector setFrame:CGRectMake(0, 20, 288, 48)];
     [self addSubview:_typeSelector];
@@ -151,7 +192,7 @@
 - (PCValueTextField *)valueTextFieldForPosition:(CGPoint)origin {
     PCValueTextField *tf = [[PCValueTextField alloc] initWithFrame:CGRectMake(origin.x, origin.y, 91, 54)];
     [tf setDelegate:self];
-    [tf setText:@"345"];
+    [tf addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     return tf;
 }
 
@@ -263,6 +304,9 @@
     if ([_value3Field isFirstResponder]) [_value3Field resignFirstResponder];
     if ([_value4Field isFirstResponder]) [_value4Field resignFirstResponder];
     if ([_resultField isFirstResponder]) [_resultField resignFirstResponder];
+    if (![super isBigPhone] && [_delegate respondsToSelector:@selector(proportionCalculatorView:requiresToMoveInDirection:)]) {
+        [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveDown];
+    }
 }
 
 - (void)didTapAnywhereToDismissKeyboard:(UITapGestureRecognizer *)recognizer {
@@ -315,20 +359,26 @@
 
 #pragma mark Text field delegate methods
 
+- (void)textFieldDidChange:(UITextField *)sender {
+    [self recalculate];
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789"] invertedSet];
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     BOOL ok = [string isEqualToString:filtered];
-    [self recalculate];
     return ok;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (![super isBigPhone]) [self setYOrigin:-50];
+    [self recalculate];
+    if (![super isBigPhone] && [_delegate respondsToSelector:@selector(proportionCalculatorView:requiresToMoveInDirection:)]) {
+        [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveUp];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (![super isBigPhone]) [self setYOrigin:0];
+    [self recalculate];
 }
 
 

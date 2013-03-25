@@ -50,6 +50,9 @@
 		549D199C16FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */; };
 		549D199D16FFD12D00EE05BF /* PC_bcg_segment_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199916FFD12D00EE05BF /* PC_bcg_segment_green.png */; };
 		549D199E16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D199A16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png */; };
+		549D19A216FFD78D00EE05BF /* PC_transparent_1x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D19A116FFD78D00EE05BF /* PC_transparent_1x48.png */; };
+		549D19A516FFE43100EE05BF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D19A316FFE43100EE05BF /* Icon.png */; };
+		549D19A616FFE43100EE05BF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D19A416FFE43100EE05BF /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,11 +108,11 @@
 		549D196516FF9D9600EE05BF /* PCLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLang.m; sourceTree = "<group>"; };
 		549D196B16FFA1CE00EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		549D196C16FFA1CE00EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		549D197116FFA1E600EE05BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		549D197116FFA1E600EE05BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		549D197416FFA5DD00EE05BF /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		549D197516FFA5DD00EE05BF /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		549D197816FFA70400EE05BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		549D197A16FFAC3600EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = file; name = "cs-CZ"; path = "cs-CZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		549D197A16FFAC3600EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		549D197B16FFAF1300EE05BF /* PC_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_arrow_down.png; sourceTree = "<group>"; };
 		549D197C16FFAF1300EE05BF /* PC_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_arrow_down@2x.png"; sourceTree = "<group>"; };
 		549D197D16FFAF1300EE05BF /* PC_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_arrow_up.png; sourceTree = "<group>"; };
@@ -124,6 +127,9 @@
 		549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_bcg_segment_gray@2x.png"; sourceTree = "<group>"; };
 		549D199916FFD12D00EE05BF /* PC_bcg_segment_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_bcg_segment_green.png; sourceTree = "<group>"; };
 		549D199A16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_bcg_segment_green@2x.png"; sourceTree = "<group>"; };
+		549D19A116FFD78D00EE05BF /* PC_transparent_1x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_transparent_1x48.png; sourceTree = "<group>"; };
+		549D19A316FFE43100EE05BF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		549D19A416FFE43100EE05BF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +325,7 @@
 		549D195B16FF9CC900EE05BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				549D19A116FFD78D00EE05BF /* PC_transparent_1x48.png */,
 				549D199716FFD12D00EE05BF /* PC_bcg_segment_gray.png */,
 				549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */,
 				549D199916FFD12D00EE05BF /* PC_bcg_segment_green.png */,
@@ -336,6 +343,8 @@
 		549D195C16FF9CC900EE05BF /* System */ = {
 			isa = PBXGroup;
 			children = (
+				549D19A316FFE43100EE05BF /* Icon.png */,
+				549D19A416FFE43100EE05BF /* Icon@2x.png */,
 				549D195D16FF9CC900EE05BF /* Default-568h@2x.png */,
 				549D195E16FF9CC900EE05BF /* Default.png */,
 				549D195F16FF9CC900EE05BF /* Default@2x.png */,
@@ -477,6 +486,9 @@
 				549D199C16FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png in Resources */,
 				549D199D16FFD12D00EE05BF /* PC_bcg_segment_green.png in Resources */,
 				549D199E16FFD12D00EE05BF /* PC_bcg_segment_green@2x.png in Resources */,
+				549D19A216FFD78D00EE05BF /* PC_transparent_1x48.png in Resources */,
+				549D19A516FFE43100EE05BF /* Icon.png in Resources */,
+				549D19A616FFE43100EE05BF /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +603,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -610,7 +623,7 @@
 			};
 			name = Debug;
 		};
-		549D193116FF985300EE05BF /* Release */ = {
+		549D193116FF985300EE05BF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -622,7 +635,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -633,11 +647,13 @@
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = AppStore;
 		};
 		549D193316FF985300EE05BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
@@ -647,11 +663,13 @@
 					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		549D193416FF985300EE05BF /* Release */ = {
+		549D193416FF985300EE05BF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -665,7 +683,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
-			name = Release;
+			name = AppStore;
 		};
 		549D193616FF985300EE05BF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -688,7 +706,7 @@
 			};
 			name = Debug;
 		};
-		549D193716FF985300EE05BF /* Release */ = {
+		549D193716FF985300EE05BF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProportionCalculator.app/ProportionCalculator";
@@ -707,7 +725,74 @@
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
-			name = Release;
+			name = AppStore;
+		};
+		549D19A716FFE5EB00EE05BF /* Enterprise */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Enterprise;
+		};
+		549D19A816FFE5EB00EE05BF /* Enterprise */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuerte Int Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuerte Int Ltd";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2DE2CF53-7583-45A3-ACD3-DAE46531D34F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DE2CF53-7583-45A3-ACD3-DAE46531D34F";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Enterprise;
+		};
+		549D19A916FFE5EB00EE05BF /* Enterprise */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProportionCalculator.app/ProportionCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
+				INFOPLIST_FILE = "ProportionCalculatorTests/ProportionCalculatorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Enterprise;
 		};
 /* End XCBuildConfiguration section */
 
@@ -716,26 +801,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				549D193016FF985300EE05BF /* Debug */,
-				549D193116FF985300EE05BF /* Release */,
+				549D193116FF985300EE05BF /* AppStore */,
+				549D19A716FFE5EB00EE05BF /* Enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AppStore;
 		};
 		549D193216FF985300EE05BF /* Build configuration list for PBXNativeTarget "ProportionCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				549D193316FF985300EE05BF /* Debug */,
-				549D193416FF985300EE05BF /* Release */,
+				549D193416FF985300EE05BF /* AppStore */,
+				549D19A816FFE5EB00EE05BF /* Enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = AppStore;
 		};
 		549D193516FF985300EE05BF /* Build configuration list for PBXNativeTarget "ProportionCalculatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				549D193616FF985300EE05BF /* Debug */,
-				549D193716FF985300EE05BF /* Release */,
+				549D193716FF985300EE05BF /* AppStore */,
+				549D19A916FFE5EB00EE05BF /* Enterprise */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = AppStore;
 		};
 /* End XCConfigurationList section */
 	};

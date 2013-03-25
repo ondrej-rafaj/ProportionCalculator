@@ -11,6 +11,8 @@
 
 @interface PCViewController : UIViewController
 
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
 @property (nonatomic) BOOL isLandscape;
 
 // Positioning

@@ -11,8 +11,6 @@
 
 @interface PCViewController ()
 
-@property (nonatomic, strong) UIImageView *backgroundImageView;
-
 @end
 
 
