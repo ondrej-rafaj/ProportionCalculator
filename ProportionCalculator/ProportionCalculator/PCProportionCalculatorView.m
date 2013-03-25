@@ -28,6 +28,8 @@
 @property (nonatomic, strong) UIImageView *leftArrow;
 @property (nonatomic, strong) UIImageView *rightArrow;
 
+@property (nonatomic, strong) UILabel *calculationsLabel;
+
 @property (nonatomic, strong) PCResultTextField *resultField;
 @property (nonatomic, strong) UILabel *explanationLabel;
 
@@ -87,6 +89,28 @@
         [self disableField:_value1Field];
     }
     
+    NSString *calc;
+    if (_propType == PCProportionCalculatorViewPropTypeProportional) {
+        if (_currentXField == 1) calc = @"x = ((b * a) / c)";
+        else if (_currentXField == 2) calc = @"x = ((a * c) / b)";
+        else if (_currentXField == 3) calc = @"x = ((a * c) / b)";
+        else if (_currentXField == 4) calc = @"x = ((c * b) / a)";
+    }
+    else {
+        if (_currentXField == 1) calc = @"x = ((b * c) / a)";
+        else if (_currentXField == 2) calc = @"x = ((b * c) / a)";
+        else if (_currentXField == 3) calc = @"x = ((a * b) / c)";
+        else if (_currentXField == 4) calc = @"x = ((a * b) / c)";
+    }
+    [UIView animateWithDuration:0.15 animations:^{
+        [_calculationsLabel setAlpha:0];
+    } completion:^(BOOL finished) {
+        [_calculationsLabel setText:calc];
+        [UIView animateWithDuration:0.15 animations:^{
+            [_calculationsLabel setAlpha:1];
+        }];
+    }];
+    
     [_resultField setText:nil];
     [_value1Field setPlaceholder:_value1Label.text];
     [_value2Field setPlaceholder:_value2Label.text];
@@ -125,32 +149,41 @@
         CGFloat c = [[_value3Field text] floatValue];
         CGFloat d = [[_value4Field text] floatValue];
         CGFloat x = 0;
+        NSString *calc;
         if (_propType == PCProportionCalculatorViewPropTypeProportional) {
             if (_currentXField == 1) {
                 x = ((c * b) / d);
+                calc = @"x = ((b * a) / c)";
             }
             else if (_currentXField == 2) {
-                x = ((c * d) / c);
+                x = ((a * d) / c);
+                calc = @"x = ((a * c) / b)";
             }
             else if (_currentXField == 3) {
                 x = ((a * d) / b);
+                calc = @"x = ((a * c) / b)";
             }
             else if (_currentXField == 4) {
                 x = ((c * b) / a);
+                calc = @"x = ((c * b) / a)";
             }
         }
         else {
             if (_currentXField == 1) {
                 x = ((c * d) / b);
+                calc = @"x = ((b * c) / a)";
             }
             else if (_currentXField == 2) {
                 x = ((c * d) / a);
+                calc = @"x = ((b * c) / a)";
             }
             else if (_currentXField == 3) {
                 x = ((a * b) / d);
+                calc = @"x = ((a * b) / c)";
             }
             else if (_currentXField == 4) {
                 x = ((a * b) / c);
+                calc = @"x = ((a * b) / c)";
             }
         }
         [_resultField setText:[NSString stringWithFormat:@"%.5g", x]];
@@ -250,6 +283,15 @@
     [self addSubview:_rightArrow];
 }
 
+- (void)createCalculationsLabel {
+    _calculationsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (_value4Label.bottom + ([self isBigPhone] ? 4 : 2)), 320, 20)];
+    [_calculationsLabel setTextColor:[UIColor colorWithWhite:0 alpha:0.2]];
+    [_calculationsLabel setBackgroundColor:[UIColor clearColor]];
+    [_calculationsLabel setTextAlignment:NSTextAlignmentCenter];
+    [_calculationsLabel setFont:[UIFont boldSystemFontOfSize:12]];
+    [self addSubview:_calculationsLabel];
+}
+
 - (void)createResultSection {
     _resultField = [[PCResultTextField alloc] initWithFrame:CGRectMake(0, (self.height - 82), 200, 62)];
     [_resultField setBackground:[UIImage imageNamed:@"PC_result_field"]];
@@ -292,6 +334,7 @@
     [self createValueFields];
     [self createValueLabels];
     [self createArrows];
+    [self createCalculationsLabel];
     [self createResultSection];
     [self addGestureRecognizers];
 }
@@ -307,6 +350,9 @@
     if (![super isBigPhone] && [_delegate respondsToSelector:@selector(proportionCalculatorView:requiresToMoveInDirection:)]) {
         [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveDown];
     }
+    [UIView animateWithDuration:0.3 animations:^{
+        [_calculationsLabel setYOrigin:(_value4Label.bottom + ([self isBigPhone] ? 4 : 2))];
+    }];
 }
 
 - (void)didTapAnywhereToDismissKeyboard:(UITapGestureRecognizer *)recognizer {
@@ -353,6 +399,7 @@
 - (void)didSwitchProportionType:(UISegmentedControl *)sender {
     _propType = sender.selectedSegmentIndex;
     [self recalculate];
+    [self showRightLabels];
     [self showRightArrows];
     [self resignFirstResponders];
 }
@@ -375,6 +422,9 @@
     if (![super isBigPhone] && [_delegate respondsToSelector:@selector(proportionCalculatorView:requiresToMoveInDirection:)]) {
         [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveUp];
     }
+    [UIView animateWithDuration:0.3 animations:^{
+        [_calculationsLabel setYOrigin:(_value4Label.bottom - ([self isBigPhone] ? 4 : 10))];
+    }];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
