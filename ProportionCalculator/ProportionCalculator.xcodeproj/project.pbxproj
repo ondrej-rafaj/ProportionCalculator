@@ -66,6 +66,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15B49C05170B9E9600E97D38 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15B49C06170B9E9600E97D38 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C07170B9E9600E97D38 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C08170BA04500E97D38 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15B49C09170BA04500E97D38 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C0A170BA04500E97D38 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C0B170BA05200E97D38 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15B49C0C170BA05200E97D38 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C0D170BA05200E97D38 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C0E170BA06400E97D38 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15B49C0F170BA06400E97D38 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C10170BA06400E97D38 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C11170BA06A00E97D38 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15B49C12170BA06A00E97D38 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C13170BA06A00E97D38 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C14170BA07E00E97D38 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15B49C15170BA07E00E97D38 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C16170BA07E00E97D38 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		549D18FA16FF985200EE05BF /* ProportionCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProportionCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549D18FD16FF985200EE05BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		549D18FF16FF985200EE05BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -212,7 +230,6 @@
 			children = (
 				549D195A16FF9CC900EE05BF /* Assets */,
 				549D190516FF985200EE05BF /* ProportionCalculator-Info.plist */,
-				549D190616FF985200EE05BF /* InfoPlist.strings */,
 				549D190916FF985200EE05BF /* main.m */,
 				549D190B16FF985200EE05BF /* ProportionCalculator-Prefix.pch */,
 			);
@@ -364,6 +381,7 @@
 		549D196716FF9E1800EE05BF /* Languages */ = {
 			isa = PBXGroup;
 			children = (
+				549D190616FF985200EE05BF /* InfoPlist.strings */,
 				549D197016FFA1D900EE05BF /* Localizable.strings */,
 			);
 			path = Languages;
@@ -454,6 +472,12 @@
 			knownRegions = (
 				en,
 				"cs-CZ",
+				cs,
+				pt,
+				it,
+				fr,
+				de,
+				sk,
 			);
 			mainGroup = 549D18F116FF985200EE05BF;
 			productRefGroup = 549D18FB16FF985200EE05BF /* Products */;
@@ -566,8 +590,15 @@
 			children = (
 				549D190716FF985200EE05BF /* en */,
 				549D196B16FFA1CE00EE05BF /* cs-CZ */,
+				15B49C06170B9E9600E97D38 /* cs */,
+				15B49C09170BA04500E97D38 /* pt */,
+				15B49C0C170BA05200E97D38 /* it */,
+				15B49C0F170BA06400E97D38 /* fr */,
+				15B49C12170BA06A00E97D38 /* de */,
+				15B49C15170BA07E00E97D38 /* sk */,
 			);
 			name = InfoPlist.strings;
+			path = ../../ProportionCalculator/ProportionCalculator;
 			sourceTree = "<group>";
 		};
 		549D192A16FF985300EE05BF /* InfoPlist.strings */ = {
@@ -575,6 +606,12 @@
 			children = (
 				549D192B16FF985300EE05BF /* en */,
 				549D196C16FFA1CE00EE05BF /* cs-CZ */,
+				15B49C07170B9E9600E97D38 /* cs */,
+				15B49C0A170BA04500E97D38 /* pt */,
+				15B49C0D170BA05200E97D38 /* it */,
+				15B49C10170BA06400E97D38 /* fr */,
+				15B49C13170BA06A00E97D38 /* de */,
+				15B49C16170BA07E00E97D38 /* sk */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -584,6 +621,12 @@
 			children = (
 				549D197116FFA1E600EE05BF /* en */,
 				549D197A16FFAC3600EE05BF /* cs-CZ */,
+				15B49C05170B9E9600E97D38 /* cs */,
+				15B49C08170BA04500E97D38 /* pt */,
+				15B49C0B170BA05200E97D38 /* it */,
+				15B49C0E170BA06400E97D38 /* fr */,
+				15B49C11170BA06A00E97D38 /* de */,
+				15B49C14170BA07E00E97D38 /* sk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

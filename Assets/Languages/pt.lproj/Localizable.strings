@@ -6,5 +6,5 @@
   Copyright (c) 2013 Fuerte Innovations. All rights reserved.
 */
 
-"PROPORT" = "Normal";
-"DISPROP" = "Inverted";
+"PROPORT" = "Proporções";
+"DISPROP" = "Invertidas";
