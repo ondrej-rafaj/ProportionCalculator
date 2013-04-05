@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15B49C23170C71AE00E97D38 /* FTCalculatorKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B49C22170C71AE00E97D38 /* FTCalculatorKeyboardView.m */; };
+		15B49CD9170F21AC00E97D38 /* PC_btn_calc_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD1170F21AC00E97D38 /* PC_btn_calc_dark.png */; };
+		15B49CDA170F21AC00E97D38 /* PC_btn_calc_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD2170F21AC00E97D38 /* PC_btn_calc_dark@2x.png */; };
+		15B49CDB170F21AC00E97D38 /* PC_btn_calc_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD3170F21AC00E97D38 /* PC_btn_calc_light.png */; };
+		15B49CDC170F21AC00E97D38 /* PC_btn_calc_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD4170F21AC00E97D38 /* PC_btn_calc_light@2x.png */; };
+		15B49CDD170F21AC00E97D38 /* PC_ico_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD5170F21AC00E97D38 /* PC_ico_delete.png */; };
+		15B49CDE170F21AC00E97D38 /* PC_ico_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD6170F21AC00E97D38 /* PC_ico_delete@2x.png */; };
+		15B49CDF170F21AC00E97D38 /* PC_ico_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD7170F21AC00E97D38 /* PC_ico_minus.png */; };
+		15B49CE0170F21AC00E97D38 /* PC_ico_minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD8170F21AC00E97D38 /* PC_ico_minus@2x.png */; };
 		549D18FE16FF985200EE05BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FD16FF985200EE05BF /* UIKit.framework */; };
 		549D190016FF985200EE05BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FF16FF985200EE05BF /* Foundation.framework */; };
 		549D190216FF985200EE05BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D190116FF985200EE05BF /* CoreGraphics.framework */; };
@@ -93,6 +102,16 @@
 		15B49C1D170C6B2800E97D38 /* lt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lt; path = lt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		15B49C1E170C6B2800E97D38 /* lt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lt; path = lt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		15B49C1F170C6B2900E97D38 /* lt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lt; path = lt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15B49C21170C71AE00E97D38 /* FTCalculatorKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCalculatorKeyboardView.h; sourceTree = "<group>"; };
+		15B49C22170C71AE00E97D38 /* FTCalculatorKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCalculatorKeyboardView.m; sourceTree = "<group>"; };
+		15B49CD1170F21AC00E97D38 /* PC_btn_calc_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_btn_calc_dark.png; sourceTree = "<group>"; };
+		15B49CD2170F21AC00E97D38 /* PC_btn_calc_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_btn_calc_dark@2x.png"; sourceTree = "<group>"; };
+		15B49CD3170F21AC00E97D38 /* PC_btn_calc_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_btn_calc_light.png; sourceTree = "<group>"; };
+		15B49CD4170F21AC00E97D38 /* PC_btn_calc_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_btn_calc_light@2x.png"; sourceTree = "<group>"; };
+		15B49CD5170F21AC00E97D38 /* PC_ico_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_ico_delete.png; sourceTree = "<group>"; };
+		15B49CD6170F21AC00E97D38 /* PC_ico_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_ico_delete@2x.png"; sourceTree = "<group>"; };
+		15B49CD7170F21AC00E97D38 /* PC_ico_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_ico_minus.png; sourceTree = "<group>"; };
+		15B49CD8170F21AC00E97D38 /* PC_ico_minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_ico_minus@2x.png"; sourceTree = "<group>"; };
 		549D18FA16FF985200EE05BF /* ProportionCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProportionCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549D18FD16FF985200EE05BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		549D18FF16FF985200EE05BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,13 +152,10 @@
 		549D195F16FF9CC900EE05BF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		549D196416FF9D9600EE05BF /* PCLang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLang.h; sourceTree = "<group>"; };
 		549D196516FF9D9600EE05BF /* PCLang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLang.m; sourceTree = "<group>"; };
-		549D196B16FFA1CE00EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		549D196C16FFA1CE00EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		549D197116FFA1E600EE05BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		549D197416FFA5DD00EE05BF /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		549D197516FFA5DD00EE05BF /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		549D197816FFA70400EE05BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		549D197A16FFAC3600EE05BF /* cs-CZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "cs-CZ"; path = "cs-CZ.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		549D197B16FFAF1300EE05BF /* PC_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_arrow_down.png; sourceTree = "<group>"; };
 		549D197C16FFAF1300EE05BF /* PC_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_arrow_down@2x.png"; sourceTree = "<group>"; };
 		549D197D16FFAF1300EE05BF /* PC_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_arrow_up.png; sourceTree = "<group>"; };
@@ -187,6 +203,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15B49C20170C717A00E97D38 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				15B49C21170C71AE00E97D38 /* FTCalculatorKeyboardView.h */,
+				15B49C22170C71AE00E97D38 /* FTCalculatorKeyboardView.m */,
+			);
+			name = Calculator;
+			sourceTree = "<group>";
+		};
 		549D18F116FF985200EE05BF = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +320,7 @@
 		549D193E16FF990400EE05BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15B49C20170C717A00E97D38 /* Calculator */,
 				549D198D16FFB90400EE05BF /* Text fields */,
 				549D194C16FF9B5500EE05BF /* Proportion calculator */,
 				549D195016FF9B7B00EE05BF /* Basic */,
@@ -351,6 +377,14 @@
 		549D195B16FF9CC900EE05BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				15B49CD1170F21AC00E97D38 /* PC_btn_calc_dark.png */,
+				15B49CD2170F21AC00E97D38 /* PC_btn_calc_dark@2x.png */,
+				15B49CD3170F21AC00E97D38 /* PC_btn_calc_light.png */,
+				15B49CD4170F21AC00E97D38 /* PC_btn_calc_light@2x.png */,
+				15B49CD5170F21AC00E97D38 /* PC_ico_delete.png */,
+				15B49CD6170F21AC00E97D38 /* PC_ico_delete@2x.png */,
+				15B49CD7170F21AC00E97D38 /* PC_ico_minus.png */,
+				15B49CD8170F21AC00E97D38 /* PC_ico_minus@2x.png */,
 				549D19A116FFD78D00EE05BF /* PC_transparent_1x48.png */,
 				549D199716FFD12D00EE05BF /* PC_bcg_segment_gray.png */,
 				549D199816FFD12D00EE05BF /* PC_bcg_segment_gray@2x.png */,
@@ -525,6 +559,14 @@
 				549D19A216FFD78D00EE05BF /* PC_transparent_1x48.png in Resources */,
 				549D19A516FFE43100EE05BF /* Icon.png in Resources */,
 				549D19A616FFE43100EE05BF /* Icon@2x.png in Resources */,
+				15B49CD9170F21AC00E97D38 /* PC_btn_calc_dark.png in Resources */,
+				15B49CDA170F21AC00E97D38 /* PC_btn_calc_dark@2x.png in Resources */,
+				15B49CDB170F21AC00E97D38 /* PC_btn_calc_light.png in Resources */,
+				15B49CDC170F21AC00E97D38 /* PC_btn_calc_light@2x.png in Resources */,
+				15B49CDD170F21AC00E97D38 /* PC_ico_delete.png in Resources */,
+				15B49CDE170F21AC00E97D38 /* PC_ico_delete@2x.png in Resources */,
+				15B49CDF170F21AC00E97D38 /* PC_ico_minus.png in Resources */,
+				15B49CE0170F21AC00E97D38 /* PC_ico_minus@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +616,7 @@
 				549D196616FF9D9600EE05BF /* PCLang.m in Sources */,
 				549D199016FFB92200EE05BF /* PCValueTextField.m in Sources */,
 				549D199416FFB9DE00EE05BF /* PCResultTextField.m in Sources */,
+				15B49C23170C71AE00E97D38 /* FTCalculatorKeyboardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +644,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				549D190716FF985200EE05BF /* en */,
-				549D196B16FFA1CE00EE05BF /* cs-CZ */,
 				15B49C06170B9E9600E97D38 /* cs */,
 				15B49C09170BA04500E97D38 /* pt */,
 				15B49C0C170BA05200E97D38 /* it */,
@@ -620,7 +662,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				549D192B16FF985300EE05BF /* en */,
-				549D196C16FFA1CE00EE05BF /* cs-CZ */,
 				15B49C07170B9E9600E97D38 /* cs */,
 				15B49C0A170BA04500E97D38 /* pt */,
 				15B49C0D170BA05200E97D38 /* it */,
@@ -638,7 +679,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				549D197116FFA1E600EE05BF /* en */,
-				549D197A16FFAC3600EE05BF /* cs-CZ */,
 				15B49C05170B9E9600E97D38 /* cs */,
 				15B49C08170BA04500E97D38 /* pt */,
 				15B49C0B170BA05200E97D38 /* it */,
