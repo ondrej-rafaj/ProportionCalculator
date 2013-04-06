@@ -15,6 +15,7 @@
 @interface PCHomeViewController ()
 
 @property (nonatomic, strong) PCProportionCalculatorView *proportionCalculatorView;
+@property (nonatomic, strong) FTCalculatorKeyboardView *calculatorKeyboard;
 
 @end
 
@@ -34,6 +35,10 @@
     [_proportionCalculatorView setDelegate:self];
     [_proportionCalculatorView setAlpha:0];
     [self.view addSubview:_proportionCalculatorView];
+    
+    _calculatorKeyboard = [[FTCalculatorKeyboardView alloc] init];
+    [_calculatorKeyboard setDelegate:self];
+    [self.view addSubview:_calculatorKeyboard];
 }
 
 #pragma mark View lifecycle
@@ -58,6 +63,47 @@
             [_proportionCalculatorView setYOrigin:0];
         }
     }];
+}
+
+- (void)proportionCalculatorViewRequestsKeyboard:(PCProportionCalculatorView *)view {
+    [_calculatorKeyboard show];
+}
+
+- (void)proportionCalculatorViewRequestsKeyboardToBeDismissed:(PCProportionCalculatorView *)view {
+    [_calculatorKeyboard hide];
+}
+
+#pragma mark Custom Keyboard delegate methods
+
+- (void)calculatorKeyboardView:(FTCalculatorKeyboardView *)view didClickNumberKeyWithValue:(NSInteger)value {
+    NSString *t = _proportionCalculatorView.currentlyEditedTextField.text ? _proportionCalculatorView.currentlyEditedTextField.text : @"";
+    NSRange isRange = [t rangeOfString:@"." options:NSCaseInsensitiveSearch];
+    BOOL isDot = (isRange.location != NSNotFound);
+    double i = [[NSString stringWithFormat:@"%.5g%@%d", [t doubleValue], (isDot ? @"." : @""), value] doubleValue];
+    NSString *v = [NSString stringWithFormat:@"%.5g", i];
+    [_proportionCalculatorView.currentlyEditedTextField setText:v];
+    [_proportionCalculatorView recalculate];
+}
+
+- (void)calculatorKeyboardView:(FTCalculatorKeyboardView *)view didClickSpecialKey:(FTCalculatorKeyboardViewSpecialKeyType)key {
+    NSString *string = _proportionCalculatorView.currentlyEditedTextField.text;
+    if (!string) string = @"";
+    if (key == FTCalculatorKeyboardViewSpecialKeyTypeClear) {
+        [_proportionCalculatorView.currentlyEditedTextField setText:@""];
+    }
+    else if (key == FTCalculatorKeyboardViewSpecialKeyTypeErase) {
+        if ([string length] > 0) string = [string substringToIndex:[string length] - 1];
+        [_proportionCalculatorView.currentlyEditedTextField setText:string];
+    }
+    else if (key == FTCalculatorKeyboardViewSpecialKeyTypePlusMinus) {
+        
+        [_proportionCalculatorView.currentlyEditedTextField setText:[@"-" stringByAppendingString:string]];
+    }
+    else if (key == FTCalculatorKeyboardViewSpecialKeyTypeDot) {
+        NSRange isRange = [string rangeOfString:@"." options:NSCaseInsensitiveSearch];
+        if (isRange.location == NSNotFound) [_proportionCalculatorView.currentlyEditedTextField setText:[string stringByAppendingString:@"."]];
+    }
+    [_proportionCalculatorView recalculate];
 }
 
 

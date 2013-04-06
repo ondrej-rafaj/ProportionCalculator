@@ -8,8 +8,9 @@
 
 #import "PCViewController.h"
 #import "PCProportionCalculatorView.h"
+#import "FTCalculatorKeyboardView.h"
 
 
-@interface PCHomeViewController : PCViewController <PCProportionCalculatorViewDelegate>
+@interface PCHomeViewController : PCViewController <PCProportionCalculatorViewDelegate, FTCalculatorKeyboardViewDelegate>
 
 @end

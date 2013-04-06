@@ -21,6 +21,7 @@
 + (UIColor *)randomColorWithAlpha:(CGFloat)alpha;
 
 
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert andAlpha:(CGFloat)alpha;
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 
 

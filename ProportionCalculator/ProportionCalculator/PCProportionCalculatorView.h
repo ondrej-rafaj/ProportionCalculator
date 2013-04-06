@@ -25,6 +25,8 @@ typedef enum {
 @protocol PCProportionCalculatorViewDelegate <NSObject>
 
 - (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction;
+- (void)proportionCalculatorViewRequestsKeyboard:(PCProportionCalculatorView *)view;
+- (void)proportionCalculatorViewRequestsKeyboardToBeDismissed:(PCProportionCalculatorView *)view;
 
 @end
 
@@ -33,6 +35,10 @@ typedef enum {
 
 @property (nonatomic, readonly) PCProportionCalculatorViewPropType propType;
 @property (nonatomic, weak) id <PCProportionCalculatorViewDelegate> delegate;
+
+@property (nonatomic, strong) UITextField *currentlyEditedTextField;
+
+- (void)recalculate;
 
 
 @end

@@ -341,12 +341,11 @@
 
 #pragma mark Gesture recognizers
 
-- (void)resignFirstResponders {
-    if ([_value1Field isFirstResponder]) [_value1Field resignFirstResponder];
-    if ([_value2Field isFirstResponder]) [_value2Field resignFirstResponder];
-    if ([_value3Field isFirstResponder]) [_value3Field resignFirstResponder];
-    if ([_value4Field isFirstResponder]) [_value4Field resignFirstResponder];
-    if ([_resultField isFirstResponder]) [_resultField resignFirstResponder];
+- (void)resignFirstResponders {    
+    _currentlyEditedTextField = nil;
+    if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboardToBeDismissed:)]) {
+        [_delegate proportionCalculatorViewRequestsKeyboardToBeDismissed:self];
+    }
     if (![super isBigPhone] && [_delegate respondsToSelector:@selector(proportionCalculatorView:requiresToMoveInDirection:)]) {
         [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveDown];
     }
@@ -406,12 +405,20 @@
 
 #pragma mark Text field delegate methods
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    _currentlyEditedTextField = textField;
+    if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboard:)]) {
+        [_delegate proportionCalculatorViewRequestsKeyboard:self];
+    }
+    return NO;
+}
+
 - (void)textFieldDidChange:(UITextField *)sender {
     [self recalculate];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789."] invertedSet];
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789.-"] invertedSet];
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
     BOOL ok = [string isEqualToString:filtered];
     return ok;
