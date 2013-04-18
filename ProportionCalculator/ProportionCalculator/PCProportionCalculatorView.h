@@ -7,6 +7,7 @@
 //
 
 #import "PCView.h"
+#import "PCValueTextField.h"
 
 
 typedef enum {
@@ -36,7 +37,7 @@ typedef enum {
 @property (nonatomic, readonly) PCProportionCalculatorViewPropType propType;
 @property (nonatomic, weak) id <PCProportionCalculatorViewDelegate> delegate;
 
-@property (nonatomic, strong) UITextField *currentlyEditedTextField;
+@property (nonatomic, strong) PCValueTextField *currentlyEditedTextField;
 
 - (void)recalculate;
 

@@ -9,6 +9,9 @@
 #import "PCValueTextField.h"
 
 
+#define kPCValueTextFieldTextColor                       [UIColor colorWithHexString:@"303030"]
+
+
 @implementation PCValueTextField
 
 
@@ -23,7 +26,7 @@
         [self setFont:[UIFont boldSystemFontOfSize:35]];
         [self setMinimumFontSize:6];
         [self setAdjustsFontSizeToFitWidth:YES];
-        [self setTextColor:[UIColor colorWithHexString:@"303030"]];
+        [self setTextColor:kPCValueTextFieldTextColor];
         [self setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     }
     return self;
@@ -38,9 +41,17 @@
     }
     else {
         [self setText:nil];
-        [self setTextColor:[UIColor colorWithHexString:@"303030"]];
+        [self setTextColor:kPCValueTextFieldTextColor];
     }
     [self setEnabled:!disable];
+}
+
+- (void)setDefaultTextColor {
+    [self setTextColor:kPCValueTextFieldTextColor];
+}
+
+- (void)setLightTextColor {
+    [self setTextColor:[UIColor colorWithHexString:@"555555"]];
 }
 
 #pragma mark Text insets

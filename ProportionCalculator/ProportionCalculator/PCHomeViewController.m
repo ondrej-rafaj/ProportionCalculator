@@ -87,6 +87,7 @@
 
 - (void)calculatorKeyboardView:(FTCalculatorKeyboardView *)view didClickSpecialKey:(FTCalculatorKeyboardViewSpecialKeyType)key {
     NSString *string = _proportionCalculatorView.currentlyEditedTextField.text;
+    
     if (!string) string = @"";
     if (key == FTCalculatorKeyboardViewSpecialKeyTypeClear) {
         [_proportionCalculatorView.currentlyEditedTextField setText:@""];

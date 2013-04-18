@@ -12,6 +12,8 @@
 @interface PCValueTextField : UITextField
 
 - (void)disable:(BOOL)disable;
+- (void)setDefaultTextColor;
+- (void)setLightTextColor;
 
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15071051172033FD008A64F3 /* PC_active-field.png in Resources */ = {isa = PBXBuildFile; fileRef = 1507104F172033FD008A64F3 /* PC_active-field.png */; };
+		15071052172033FD008A64F3 /* PC_active-field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15071050172033FD008A64F3 /* PC_active-field@2x.png */; };
 		15B49C23170C71AE00E97D38 /* FTCalculatorKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B49C22170C71AE00E97D38 /* FTCalculatorKeyboardView.m */; };
 		15B49CD9170F21AC00E97D38 /* PC_btn_calc_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD1170F21AC00E97D38 /* PC_btn_calc_dark.png */; };
 		15B49CDA170F21AC00E97D38 /* PC_btn_calc_dark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD2170F21AC00E97D38 /* PC_btn_calc_dark@2x.png */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1507104F172033FD008A64F3 /* PC_active-field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_active-field.png"; sourceTree = "<group>"; };
+		15071050172033FD008A64F3 /* PC_active-field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_active-field@2x.png"; sourceTree = "<group>"; };
 		15B49C05170B9E9600E97D38 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		15B49C06170B9E9600E97D38 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		15B49C07170B9E9600E97D38 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 		549D195B16FF9CC900EE05BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1507104F172033FD008A64F3 /* PC_active-field.png */,
+				15071050172033FD008A64F3 /* PC_active-field@2x.png */,
 				15B49CD1170F21AC00E97D38 /* PC_btn_calc_dark.png */,
 				15B49CD2170F21AC00E97D38 /* PC_btn_calc_dark@2x.png */,
 				15B49CD3170F21AC00E97D38 /* PC_btn_calc_light.png */,
@@ -567,6 +573,8 @@
 				15B49CDE170F21AC00E97D38 /* PC_ico_delete@2x.png in Resources */,
 				15B49CDF170F21AC00E97D38 /* PC_ico_minus.png in Resources */,
 				15B49CE0170F21AC00E97D38 /* PC_ico_minus@2x.png in Resources */,
+				15071051172033FD008A64F3 /* PC_active-field.png in Resources */,
+				15071052172033FD008A64F3 /* PC_active-field@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

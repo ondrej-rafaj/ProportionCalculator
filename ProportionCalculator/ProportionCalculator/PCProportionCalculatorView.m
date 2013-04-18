@@ -7,7 +7,6 @@
 //
 
 #import "PCProportionCalculatorView.h"
-#import "PCValueTextField.h"
 #import "PCResultTextField.h"
 
 
@@ -19,6 +18,11 @@
 @property (nonatomic, strong) PCValueTextField *value2Field;
 @property (nonatomic, strong) PCValueTextField *value3Field;
 @property (nonatomic, strong) PCValueTextField *value4Field;
+
+@property (nonatomic, strong) UIImageView *value1FieldBcg;
+@property (nonatomic, strong) UIImageView *value2FieldBcg;
+@property (nonatomic, strong) UIImageView *value3FieldBcg;
+@property (nonatomic, strong) UIImageView *value4FieldBcg;
 
 @property (nonatomic, strong) UILabel *value1Label;
 @property (nonatomic, strong) UILabel *value2Label;
@@ -39,7 +43,6 @@
 
 
 @implementation PCProportionCalculatorView
-
 
 #pragma mark Calculations & related
 
@@ -144,11 +147,11 @@
 
 - (void)recalculate {
     if ([self allValuesAvailable]) {
-        CGFloat a = [[_value1Field text] floatValue];
-        CGFloat b = [[_value2Field text] floatValue];
-        CGFloat c = [[_value3Field text] floatValue];
-        CGFloat d = [[_value4Field text] floatValue];
-        CGFloat x = 0;
+        double a = [[_value1Field text] doubleValue];
+        double b = [[_value2Field text] doubleValue];
+        double c = [[_value3Field text] doubleValue];
+        double d = [[_value4Field text] doubleValue];
+        double x = 0;
         NSString *calc;
         if (_propType == PCProportionCalculatorViewPropTypeProportional) {
             if (_currentXField == 1) {
@@ -232,14 +235,36 @@
 - (void)createValueFields {
     _currentXField = 4;
     
+    UIImage *img = [UIImage imageNamed:@"PC_active-field"];
+    
+    _value1FieldBcg = [[UIImageView alloc] initWithImage:img];
+    [_value1FieldBcg setAlpha:0];
+    [_value1FieldBcg setOrigin:CGPointMake(48, 135)];
+    [self addSubview:_value1FieldBcg];
+    
     _value1Field = [self valueTextFieldForPosition:CGPointMake(54, 139)];
     [self addSubview:_value1Field];
+    
+    _value2FieldBcg = [[UIImageView alloc] initWithImage:img];
+    [_value2FieldBcg setAlpha:0];
+    [_value2FieldBcg setOrigin:CGPointMake(174, 135)];
+    [self addSubview:_value2FieldBcg];
     
     _value2Field = [self valueTextFieldForPosition:CGPointMake(180, 139)];
     [self addSubview:_value2Field];
     
+    _value3FieldBcg = [[UIImageView alloc] initWithImage:img];
+    [_value3FieldBcg setAlpha:0];
+    [_value3FieldBcg setOrigin:CGPointMake(48, 205)];
+    [self addSubview:_value3FieldBcg];
+    
     _value3Field = [self valueTextFieldForPosition:CGPointMake(54, 209)];
     [self addSubview:_value3Field];
+    
+    _value4FieldBcg = [[UIImageView alloc] initWithImage:img];
+    [_value4FieldBcg setAlpha:0];
+    [_value4FieldBcg setOrigin:CGPointMake(174, 205)];
+    [self addSubview:_value4FieldBcg];
     
     _value4Field = [self valueTextFieldForPosition:CGPointMake(180, 209)];
     [self addSubview:_value4Field];
@@ -298,7 +323,6 @@
     [_resultField setEnabled:NO];
     [_resultField setTextAlignment:NSTextAlignmentRight];
     [_resultField setText:nil];
-    //[_resultField setPlaceholder:PCLangGet(@"RESULT")];
     [_resultField setFont:[UIFont boldSystemFontOfSize:50]];
     [_resultField setMinimumFontSize:6];
     [_resultField setAdjustsFontSizeToFitWidth:YES];
@@ -343,6 +367,16 @@
 
 - (void)resignFirstResponders {    
     _currentlyEditedTextField = nil;
+    [_value1Field setDefaultTextColor];
+    [_value2Field setDefaultTextColor];
+    [_value3Field setDefaultTextColor];
+    [_value4Field setDefaultTextColor];
+    [UIView animateWithDuration:0.3 animations:^{
+        [_value1FieldBcg setAlpha:0];
+        [_value2FieldBcg setAlpha:0];
+        [_value3FieldBcg setAlpha:0];
+        [_value4FieldBcg setAlpha:0];
+    }];
     if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboardToBeDismissed:)]) {
         [_delegate proportionCalculatorViewRequestsKeyboardToBeDismissed:self];
     }
@@ -406,7 +440,33 @@
 #pragma mark Text field delegate methods
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    _currentlyEditedTextField = textField;
+    _currentlyEditedTextField = (PCValueTextField *)textField;
+    [_value1Field setLightTextColor];
+    [_value2Field setLightTextColor];
+    [_value3Field setLightTextColor];
+    [_value4Field setLightTextColor];
+    [UIView animateWithDuration:0.3 animations:^{
+        [_value1FieldBcg setAlpha:0];
+        [_value2FieldBcg setAlpha:0];
+        [_value3FieldBcg setAlpha:0];
+        [_value4FieldBcg setAlpha:0];
+        if (_currentlyEditedTextField == _value1Field) {
+            [_value1FieldBcg setAlpha:1];
+        }
+        else if (_currentlyEditedTextField == _value2Field) {
+            [_value2FieldBcg setAlpha:1];
+        }
+        else if (_currentlyEditedTextField == _value3Field) {
+            [_value3FieldBcg setAlpha:1];
+        }
+        else if (_currentlyEditedTextField == _value4Field) {
+            [_value4FieldBcg setAlpha:1];
+        }
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [_currentlyEditedTextField setDefaultTextColor];
     if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboard:)]) {
         [_delegate proportionCalculatorViewRequestsKeyboard:self];
     }
