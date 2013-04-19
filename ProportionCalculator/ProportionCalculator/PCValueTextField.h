@@ -11,6 +11,8 @@
 
 @interface PCValueTextField : UITextField
 
+@property (nonatomic, strong) NSString* realValueString;
+
 - (void)disable:(BOOL)disable;
 - (void)setDefaultTextColor;
 - (void)setLightTextColor;

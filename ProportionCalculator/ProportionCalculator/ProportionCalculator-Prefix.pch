@@ -17,3 +17,5 @@
     #import "UIView+Layout.h"
     #import "UIColor+Tools.h"
 #endif
+
+#define MAX_LENGTH_DOT 7

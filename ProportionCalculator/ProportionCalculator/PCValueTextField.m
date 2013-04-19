@@ -11,6 +11,9 @@
 
 #define kPCValueTextFieldTextColor                       [UIColor colorWithHexString:@"303030"]
 
+@interface PCValueTextField ()
+
+@end
 
 @implementation PCValueTextField
 
@@ -28,11 +31,29 @@
         [self setAdjustsFontSizeToFitWidth:YES];
         [self setTextColor:kPCValueTextFieldTextColor];
         [self setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+        _realValueString=nil;
     }
     return self;
 }
 
 #pragma mark Settings
+
+- (void)setRealValueString:(NSString *)realValueString {
+    _realValueString=realValueString;
+    if (_realValueString.length>0) {
+        BOOL minus =([_realValueString characterAtIndex:0]==[@"-" characterAtIndex:0]);
+        NSUInteger adder =(minus)?1:0;
+        if (_realValueString.length<=MAX_LENGTH_DOT+adder) {
+            self.text=_realValueString;
+        }
+        else{
+            self.text = [NSString stringWithFormat:@"%.5g", [_realValueString doubleValue]];
+        }
+    }
+    else {
+        self.text=@"";
+    }
+}
 
 - (void)disable:(BOOL)disable {
     if (disable) {

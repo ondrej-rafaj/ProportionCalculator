@@ -147,10 +147,10 @@
 
 - (void)recalculate {
     if ([self allValuesAvailable]) {
-        double a = [[_value1Field text] doubleValue];
-        double b = [[_value2Field text] doubleValue];
-        double c = [[_value3Field text] doubleValue];
-        double d = [[_value4Field text] doubleValue];
+        double a = [[_value1Field realValueString] doubleValue];
+        double b = [[_value2Field realValueString] doubleValue];
+        double c = [[_value3Field realValueString] doubleValue];
+        double d = [[_value4Field realValueString] doubleValue];
         double x = 0;
         NSString *calc;
         if (_propType == PCProportionCalculatorViewPropTypeProportional) {
