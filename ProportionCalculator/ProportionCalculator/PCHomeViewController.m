@@ -84,7 +84,14 @@
     NSRange isRange = [v rangeOfString:@"." options:NSCaseInsensitiveSearch];
     BOOL minus =([v characterAtIndex:0]==[@"-" characterAtIndex:0]);
     NSUInteger adder =(minus)?1:0;
-    BOOL tooManyDigitAfterPoint = ((isRange.location != NSNotFound) && (v.length>MAX_LENGTH_DOT+adder));
+    NSString* zeroChecker = [[v stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@"." withString:@""];
+    NSUInteger lengthOfPotentialZeroes = zeroChecker.length;
+    zeroChecker = [zeroChecker stringByReplacingOccurrencesOfString:@"0" withString:@""];
+    BOOL isFractional0 = NO;
+    if (isRange.location!=NSNotFound  && zeroChecker.length==0) {
+        isFractional0 = YES;
+    }
+    BOOL tooManyDigitAfterPoint = ((isRange.location != NSNotFound) && (v.length>MAX_LENGTH_DOT+adder) && !isFractional0);
     if (tooManyDigitAfterPoint) {
         v=t;
     }

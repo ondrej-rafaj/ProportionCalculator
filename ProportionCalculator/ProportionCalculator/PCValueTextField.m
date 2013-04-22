@@ -58,10 +58,12 @@
 - (void)disable:(BOOL)disable {
     if (disable) {
         [self setText:@"x"];
+        _realValueString=@"";
         [self setTextColor:[UIColor grayColor]];
     }
     else {
         [self setText:nil];
+        _realValueString=@"";
         [self setTextColor:kPCValueTextFieldTextColor];
     }
     [self setEnabled:!disable];

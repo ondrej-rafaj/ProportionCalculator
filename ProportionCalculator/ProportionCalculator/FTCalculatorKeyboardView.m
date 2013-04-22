@@ -63,6 +63,8 @@
 
 - (void)createSpecialButtons {
     UIImage *bcg = [UIImage imageNamed:@"PC_btn_calc_dark"];
+    UIImage* deleteBtnImage = [UIImage imageNamed:@"PC_ico_delete"];
+    UIImage* minusBtnImage = [UIImage imageNamed:@"PC_ico_minus"];
     CGFloat xPos = (8 + ((3 + bcg.size.width) * 3));
     CGFloat yPos = 10;
     for (int i = 0; i < 4; i++) {
@@ -76,11 +78,11 @@
                 break;
                 
             case FTCalculatorKeyboardViewSpecialKeyTypeErase:
-                t = @"<";
+                [b setImage:deleteBtnImage forState:UIControlStateNormal];
                 break;
                 
             case FTCalculatorKeyboardViewSpecialKeyTypePlusMinus:
-                t = @"+-";
+                [b setImage:minusBtnImage forState:UIControlStateNormal];
                 break;
                 
             case FTCalculatorKeyboardViewSpecialKeyTypeDot:
