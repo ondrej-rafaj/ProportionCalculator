@@ -75,24 +75,50 @@
 
 #pragma mark Custom Keyboard delegate methods
 
+-(NSString*)stringByTrimmingLeadingZeroesFromNSString:(NSString*)str {
+    NSInteger i = 0;
+    while ((i < [str length])
+           && [[NSCharacterSet characterSetWithCharactersInString:@"0"] characterIsMember:[str characterAtIndex:i]]) {
+        i++;
+    }
+    return [str substringFromIndex:i];
+}
+
+
 - (void)calculatorKeyboardView:(FTCalculatorKeyboardView *)view didClickNumberKeyWithValue:(NSInteger)value {
     NSString *t = _proportionCalculatorView.currentlyEditedTextField.realValueString ? _proportionCalculatorView.currentlyEditedTextField.realValueString : @"";
     NSString *v = [NSString stringWithFormat:@"%@%d", t,value];
     if ([t isEqualToString:@"0"] && value==0) {
         v=@"0";
     }
+    else if ([t isEqualToString:@"0"] && value!=0) {
+        v=[NSString stringWithFormat:@"%d",value];
+    }
     NSRange isRange = [v rangeOfString:@"." options:NSCaseInsensitiveSearch];
     BOOL minus =([v characterAtIndex:0]==[@"-" characterAtIndex:0]);
     NSUInteger adder =(minus)?1:0;
     NSString* zeroChecker = [[v stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@"." withString:@""];
-    NSUInteger lengthOfPotentialZeroes = zeroChecker.length;
-    zeroChecker = [zeroChecker stringByReplacingOccurrencesOfString:@"0" withString:@""];
-    BOOL isFractional0 = NO;
-    if (isRange.location!=NSNotFound  && zeroChecker.length==0) {
-        isFractional0 = YES;
+    
+    /** Cases
+     0.000...000n should be possible
+     -0.000...000n should be possible
+     0. ...abcde0....000f should be NOT possible
+     0. ...a00...000b should be NOT possible if distance a-b (or a-c.. a-e) > MAX_LENGTH_DOT
+    ABCDE0000...000 possible
+     a.0...0bcde should be NOT possible if distance a-b (or a-c.. a-e) > MAX_LENGTH_DOT
+    */
+    
+    BOOL isFirstDigit0 = [zeroChecker characterAtIndex:0]==[@"0" characterAtIndex:0];
+    BOOL tooManySignificantDigits = NO;
+    zeroChecker = [self stringByTrimmingLeadingZeroesFromNSString:zeroChecker];
+    NSUInteger lenghtOfNonZeroElem = zeroChecker.length;
+    if (isFirstDigit0) {
+        tooManySignificantDigits = ((isRange.location != NSNotFound) && (lenghtOfNonZeroElem>MAX_LENGTH_DOT+adder));
     }
-    BOOL tooManyDigitAfterPoint = ((isRange.location != NSNotFound) && (v.length>MAX_LENGTH_DOT+adder) && !isFractional0);
-    if (tooManyDigitAfterPoint) {
+    else {
+        tooManySignificantDigits = ((isRange.location != NSNotFound) && (v.length>MAX_LENGTH_DOT+adder));
+    }
+    if (tooManySignificantDigits) {
         v=t;
     }
     [_proportionCalculatorView.currentlyEditedTextField setRealValueString:v];
