@@ -18,6 +18,7 @@
 		15B49CDE170F21AC00E97D38 /* PC_ico_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD6170F21AC00E97D38 /* PC_ico_delete@2x.png */; };
 		15B49CDF170F21AC00E97D38 /* PC_ico_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD7170F21AC00E97D38 /* PC_ico_minus.png */; };
 		15B49CE0170F21AC00E97D38 /* PC_ico_minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B49CD8170F21AC00E97D38 /* PC_ico_minus@2x.png */; };
+		4BD8CD9D1726E2F200B30F94 /* UIView+AttributeByObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8CD9C1726E2F200B30F94 /* UIView+AttributeByObject.m */; };
 		549D18FE16FF985200EE05BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FD16FF985200EE05BF /* UIKit.framework */; };
 		549D190016FF985200EE05BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D18FF16FF985200EE05BF /* Foundation.framework */; };
 		549D190216FF985200EE05BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D190116FF985200EE05BF /* CoreGraphics.framework */; };
@@ -116,6 +117,8 @@
 		15B49CD6170F21AC00E97D38 /* PC_ico_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_ico_delete@2x.png"; sourceTree = "<group>"; };
 		15B49CD7170F21AC00E97D38 /* PC_ico_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PC_ico_minus.png; sourceTree = "<group>"; };
 		15B49CD8170F21AC00E97D38 /* PC_ico_minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_ico_minus@2x.png"; sourceTree = "<group>"; };
+		4BD8CD9B1726E2F200B30F94 /* UIView+AttributeByObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AttributeByObject.h"; sourceTree = "<group>"; };
+		4BD8CD9C1726E2F200B30F94 /* UIView+AttributeByObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AttributeByObject.m"; sourceTree = "<group>"; };
 		549D18FA16FF985200EE05BF /* ProportionCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProportionCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549D18FD16FF985200EE05BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		549D18FF16FF985200EE05BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -345,6 +348,8 @@
 				549D194516FF992500EE05BF /* UIView+Effects.m */,
 				549D194616FF992500EE05BF /* UIView+Layout.h */,
 				549D194716FF992500EE05BF /* UIView+Layout.m */,
+				4BD8CD9B1726E2F200B30F94 /* UIView+AttributeByObject.h */,
+				4BD8CD9C1726E2F200B30F94 /* UIView+AttributeByObject.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				549D199016FFB92200EE05BF /* PCValueTextField.m in Sources */,
 				549D199416FFB9DE00EE05BF /* PCResultTextField.m in Sources */,
 				15B49C23170C71AE00E97D38 /* FTCalculatorKeyboardView.m in Sources */,
+				4BD8CD9D1726E2F200B30F94 /* UIView+AttributeByObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,20 +14,9 @@
 
 @property (nonatomic, strong) UISegmentedControl *typeSelector;
 
-@property (nonatomic, strong) PCValueTextField *value1Field;
-@property (nonatomic, strong) PCValueTextField *value2Field;
-@property (nonatomic, strong) PCValueTextField *value3Field;
-@property (nonatomic, strong) PCValueTextField *value4Field;
-
-@property (nonatomic, strong) UIImageView *value1FieldBcg;
-@property (nonatomic, strong) UIImageView *value2FieldBcg;
-@property (nonatomic, strong) UIImageView *value3FieldBcg;
-@property (nonatomic, strong) UIImageView *value4FieldBcg;
-
-@property (nonatomic, strong) UILabel *value1Label;
-@property (nonatomic, strong) UILabel *value2Label;
-@property (nonatomic, strong) UILabel *value3Label;
-@property (nonatomic, strong) UILabel *value4Label;
+@property (nonatomic, strong) NSArray* valuesFields;
+@property (nonatomic, strong) NSArray* valuesFieldBcgs;
+@property (nonatomic, strong) NSArray* valuesLabels;
 
 @property (nonatomic, strong) UIImageView *leftArrow;
 @property (nonatomic, strong) UIImageView *rightArrow;
@@ -47,50 +36,30 @@
 #pragma mark Calculations & related
 
 - (BOOL)allValuesAvailable {
-    BOOL ok = YES;
-    if (_value1Field.text.length == 0) ok = NO;
-    if (_value2Field.text.length == 0) ok = NO;
-    if (_value3Field.text.length == 0) ok = NO;
-    if (_value4Field.text.length == 0) ok = NO;
+    __block BOOL ok=YES;
+    [_valuesFields enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (((PCValueTextField*)obj).text.length==0) {
+            ok=YES;
+            *stop=YES;
+        }
+    }];
     return ok;
 }
 
-- (void)disableField:(PCValueTextField *)textField {
-    [_value1Field disable:(textField == _value1Field)];
-    [_value2Field disable:(textField == _value2Field)];
-    [_value3Field disable:(textField == _value3Field)];
-    [_value4Field disable:(textField == _value4Field)];
-}
-
 - (void)showRightLabels {
-    if (_currentXField == 4) {
-        [_value1Label setText:@"a"];
-        [_value2Label setText:@"b"];
-        [_value3Label setText:@"c"];
-        [_value4Label setText:@"x"];
-        [self disableField:_value4Field];
-    }
-    else if (_currentXField == 3) {
-        [_value1Label setText:@"a"];
-        [_value2Label setText:@"b"];
-        [_value3Label setText:@"x"];
-        [_value4Label setText:@"c"];
-        [self disableField:_value3Field];
-    }
-    else if (_currentXField == 2) {
-        [_value1Label setText:@"a"];
-        [_value2Label setText:@"x"];
-        [_value3Label setText:@"b"];
-        [_value4Label setText:@"c"];
-        [self disableField:_value2Field];
-    }
-    else if (_currentXField == 1) {
-        [_value1Label setText:@"x"];
-        [_value2Label setText:@"a"];
-        [_value3Label setText:@"b"];
-        [_value4Label setText:@"c"];
-        [self disableField:_value1Field];
-    }
+    __block NSUInteger currentCounter=0;
+    NSArray* letterArray = @[@"a",@"b",@"c"];
+    [_valuesLabels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (idx==(_currentXField-1)) {
+            [obj setText:@"x"];
+            [_valuesFields[idx] disable:YES];
+        }
+        else {
+            [obj setText:letterArray[currentCounter]];
+            [_valuesFields[idx] disable:NO];
+            currentCounter++;
+        }
+    }];
     
     NSString *calc;
     if (_propType == PCProportionCalculatorViewPropTypeProportional) {
@@ -115,10 +84,9 @@
     }];
     
     [_resultField setText:nil];
-    [_value1Field setPlaceholder:_value1Label.text];
-    [_value2Field setPlaceholder:_value2Label.text];
-    [_value3Field setPlaceholder:_value3Label.text];
-    [_value4Field setPlaceholder:_value4Label.text];
+    [_valuesLabels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [_valuesFields[idx] setPlaceholder:[obj text]];
+    }];
 }
 
 - (void)showRightArrows {
@@ -147,10 +115,10 @@
 
 - (void)recalculate {
     if ([self allValuesAvailable]) {
-        double a = [[_value1Field realValueString] doubleValue];
-        double b = [[_value2Field realValueString] doubleValue];
-        double c = [[_value3Field realValueString] doubleValue];
-        double d = [[_value4Field realValueString] doubleValue];
+        double a = [[_valuesFields[0] realValueString] doubleValue];
+        double b = [[_valuesFields[1] realValueString] doubleValue];
+        double c = [[_valuesFields[2] realValueString] doubleValue];
+        double d = [[_valuesFields[3] realValueString] doubleValue];
         double x = 0;
         NSString *calc;
         if (_propType == PCProportionCalculatorViewPropTypeProportional) {
@@ -234,40 +202,27 @@
 
 - (void)createValueFields {
     _currentXField = 4;
-    
     UIImage *img = [UIImage imageNamed:@"PC_active-field"];
-    
-    _value1FieldBcg = [[UIImageView alloc] initWithImage:img];
-    [_value1FieldBcg setAlpha:0];
-    [_value1FieldBcg setOrigin:CGPointMake(48, 135)];
-    [self addSubview:_value1FieldBcg];
-    
-    _value1Field = [self valueTextFieldForPosition:CGPointMake(54, 139)];
-    [self addSubview:_value1Field];
-    
-    _value2FieldBcg = [[UIImageView alloc] initWithImage:img];
-    [_value2FieldBcg setAlpha:0];
-    [_value2FieldBcg setOrigin:CGPointMake(174, 135)];
-    [self addSubview:_value2FieldBcg];
-    
-    _value2Field = [self valueTextFieldForPosition:CGPointMake(180, 139)];
-    [self addSubview:_value2Field];
-    
-    _value3FieldBcg = [[UIImageView alloc] initWithImage:img];
-    [_value3FieldBcg setAlpha:0];
-    [_value3FieldBcg setOrigin:CGPointMake(48, 205)];
-    [self addSubview:_value3FieldBcg];
-    
-    _value3Field = [self valueTextFieldForPosition:CGPointMake(54, 209)];
-    [self addSubview:_value3Field];
-    
-    _value4FieldBcg = [[UIImageView alloc] initWithImage:img];
-    [_value4FieldBcg setAlpha:0];
-    [_value4FieldBcg setOrigin:CGPointMake(174, 205)];
-    [self addSubview:_value4FieldBcg];
-    
-    _value4Field = [self valueTextFieldForPosition:CGPointMake(180, 209)];
-    [self addSubview:_value4Field];
+    NSMutableArray* auxFieldsArray = [NSMutableArray arrayWithCapacity:4];
+    NSMutableArray* auxFieldBcgsArray = [NSMutableArray arrayWithCapacity:4];
+    for (int i = 0; i<4; i++) {
+        CGFloat positionX = (i%2)?180:54;
+        CGFloat positionY = (i<2)?139:209;
+        PCValueTextField* field = [self valueTextFieldForPosition:CGPointMake(positionX, positionY)];
+        field.tag = i;
+        
+        positionX = (i%2)?174:48;
+        positionY = (i<2)?135:205;
+        UIImageView* fieldBcg = [[UIImageView alloc] initWithImage:img];
+        [fieldBcg setAlpha:0];
+        [fieldBcg setOrigin:CGPointMake(positionX, positionY)];
+        [self addSubview:fieldBcg];
+        [auxFieldBcgsArray addObject:fieldBcg];
+        [self addSubview:field];
+        [auxFieldsArray addObject:field];
+    }
+    _valuesFields = [NSArray arrayWithArray:auxFieldsArray];
+    _valuesFieldBcgs = [NSArray arrayWithArray:auxFieldBcgsArray];
 }
 
 - (UILabel *)valueLabelForPosition:(CGPoint)origin {
@@ -283,18 +238,16 @@
 }
 
 - (void)createValueLabels {
-    _value1Label = [self valueLabelForPosition:CGPointMake(19, 102)];
-    [self addSubview:_value1Label];
-    
-    _value2Label = [self valueLabelForPosition:CGPointMake((320 - 30 - 17), 102)];
-    [self addSubview:_value2Label];
-    
-    _value3Label = [self valueLabelForPosition:CGPointMake(19, 272)];
-    [self addSubview:_value3Label];
-    
-    _value4Label = [self valueLabelForPosition:CGPointMake((320 - 30 - 17), 272)];
-    [self addSubview:_value4Label];
-    
+    NSMutableArray* auxlabelsArray = [NSMutableArray arrayWithCapacity:4];
+    for (int i = 0; i<4; i++) {
+        CGFloat positionX = (i%2)?(320 - 30 - 17):19;
+        CGFloat positionY = (i<2)?102:272;
+        UILabel* label = [self valueLabelForPosition:CGPointMake(positionX, positionY)];
+        label.tag=i;
+        [self addSubview:label];
+        [auxlabelsArray addObject:label];
+    }
+    _valuesLabels = [NSArray arrayWithArray:auxlabelsArray];
     [self showRightLabels];
 }
 
@@ -302,14 +255,14 @@
     _leftArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PC_arrow_down"]];
     [_leftArrow setOrigin:CGPointMake(10, 129)];
     [self addSubview:_leftArrow];
-
+    
     _rightArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PC_arrow_down"]];
     [_rightArrow setOrigin:CGPointMake(300, 129)];
     [self addSubview:_rightArrow];
 }
 
 - (void)createCalculationsLabel {
-    _calculationsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (_value4Label.bottom + ([self isBigPhone] ? 4 : 2)), 320, 20)];
+    _calculationsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (((UIView*)_valuesLabels[3]).bottom + ([self isBigPhone] ? 4 : 2)), 320, 20)];
     [_calculationsLabel setTextColor:[UIColor colorWithWhite:0 alpha:0.2]];
     [_calculationsLabel setBackgroundColor:[UIColor clearColor]];
     [_calculationsLabel setTextAlignment:NSTextAlignmentCenter];
@@ -345,11 +298,9 @@
 - (void)addGestureRecognizers {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAnywhereToDismissKeyboard:)];
     [self addGestureRecognizer:tap];
-    
-    [self putTapRecognizerOnLabel:_value1Label];
-    [self putTapRecognizerOnLabel:_value2Label];
-    [self putTapRecognizerOnLabel:_value3Label];
-    [self putTapRecognizerOnLabel:_value4Label];
+    [_valuesLabels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [self putTapRecognizerOnLabel:obj];
+    }];
 }
 
 - (void)createAllElements {
@@ -365,17 +316,11 @@
 
 #pragma mark Gesture recognizers
 
-- (void)resignFirstResponders {    
+- (void)resignFirstResponders {
     _currentlyEditedTextField = nil;
-    [_value1Field setDefaultTextColor];
-    [_value2Field setDefaultTextColor];
-    [_value3Field setDefaultTextColor];
-    [_value4Field setDefaultTextColor];
+    [_valuesFields makeObjectsPerformSelector:@selector(setDefaultTextColor)];
     [UIView animateWithDuration:0.3 animations:^{
-        [_value1FieldBcg setAlpha:0];
-        [_value2FieldBcg setAlpha:0];
-        [_value3FieldBcg setAlpha:0];
-        [_value4FieldBcg setAlpha:0];
+        [_valuesFieldBcgs makeObjectsPerformSelector:@selector(setAlphaByObject:) withObject:@(0.0)];
     }];
     if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboardToBeDismissed:)]) {
         [_delegate proportionCalculatorViewRequestsKeyboardToBeDismissed:self];
@@ -384,7 +329,8 @@
         [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveDown];
     }
     [UIView animateWithDuration:0.3 animations:^{
-        [_calculationsLabel setYOrigin:(_value4Label.bottom + ([self isBigPhone] ? 4 : 2))];
+        CGFloat yOrigin =(((UIView*)_valuesLabels[3]).bottom + ([self isBigPhone] ? 4 : 2));
+        [_calculationsLabel setYOrigin:yOrigin];
     }];
 }
 
@@ -395,34 +341,12 @@
 - (void)didTapValueLabel:(UITapGestureRecognizer *)recognizer {
     UILabel *l = (UILabel *)recognizer.view;
     if ([l.text isEqualToString:@"x"]) return;
-    if (l == _value1Label) {
-        [_value1Field setText:nil];
-    }
-    else if (l == _value2Label) {
-        [_value2Field setText:nil];
-    }
-    else if (l == _value3Label) {
-        [_value3Field setText:nil];
-    }
-    else if (l == _value4Label) {
-        [_value4Field setText:nil];
-    }
+    [_valuesFields[l.tag] setRealValueString:nil];
     [self resignFirstResponders];
 }
 
 - (void)didDoubleTapValueLabel:(UITapGestureRecognizer *)recognizer {
-    if (recognizer.view == _value1Label) {
-        _currentXField = 1;
-    }
-    else if (recognizer.view == _value2Label) {
-        _currentXField = 2;
-    }
-    else if (recognizer.view == _value3Label) {
-        _currentXField = 3;
-    }
-    else if (recognizer.view == _value4Label) {
-        _currentXField = 4;
-    }
+    _currentXField=recognizer.view.tag+1;
     [self showRightLabels];
     [self resignFirstResponders];
 }
@@ -441,62 +365,27 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     _currentlyEditedTextField = (PCValueTextField *)textField;
-    [_value1Field setLightTextColor];
-    [_value2Field setLightTextColor];
-    [_value3Field setLightTextColor];
-    [_value4Field setLightTextColor];
+    NSUInteger currentTag = textField.tag;
+    [_valuesFields makeObjectsPerformSelector:@selector(setLightTextColor)];
     [UIView animateWithDuration:0.3 animations:^{
-        [_value1FieldBcg setAlpha:0];
-        [_value2FieldBcg setAlpha:0];
-        [_value3FieldBcg setAlpha:0];
-        [_value4FieldBcg setAlpha:0];
-        if (_currentlyEditedTextField == _value1Field) {
-            [_value1FieldBcg setAlpha:1];
-        }
-        else if (_currentlyEditedTextField == _value2Field) {
-            [_value2FieldBcg setAlpha:1];
-        }
-        else if (_currentlyEditedTextField == _value3Field) {
-            [_value3FieldBcg setAlpha:1];
-        }
-        else if (_currentlyEditedTextField == _value4Field) {
-            [_value4FieldBcg setAlpha:1];
-        }
+        [_valuesFieldBcgs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if (idx==currentTag) {
+                [obj setAlpha:1.0];
+            }
+            else {
+                [obj setAlpha:0.0];
+            }
+        }];
+        CGFloat yOrigin =(((UIView*)_valuesLabels[3]).bottom -15);
+        [_calculationsLabel setYOrigin:yOrigin];
     } completion:^(BOOL finished) {
         
     }];
-    
     [_currentlyEditedTextField setDefaultTextColor];
     if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboard:)]) {
         [_delegate proportionCalculatorViewRequestsKeyboard:self];
     }
     return NO;
 }
-
-- (void)textFieldDidChange:(UITextField *)sender {
-    [self recalculate];
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789.-"] invertedSet];
-    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
-    BOOL ok = [string isEqualToString:filtered];
-    return ok;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self recalculate];
-    if (![super isBigPhone] && [_delegate respondsToSelector:@selector(proportionCalculatorView:requiresToMoveInDirection:)]) {
-        [_delegate proportionCalculatorView:self requiresToMoveInDirection:PCProportionCalculatorViewDirectionMoveUp];
-    }
-    [UIView animateWithDuration:0.3 animations:^{
-        [_calculationsLabel setYOrigin:(_value4Label.bottom - ([self isBigPhone] ? 4 : 10))];
-    }];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self recalculate];
-}
-
 
 @end
