@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) PCProportionCalculatorView *proportionCalculatorView;
 @property (nonatomic, strong) FTCalculatorKeyboardView *calculatorKeyboard;
-
+@property (nonatomic, strong) UIScrollView* scroller;
 @end
 
 
@@ -30,11 +30,12 @@
     
     [super setBackgroundImage:([super isBigPhone] ? @"Default-568h" : @"Default")];
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"D7D7D7"]];
+    [_scroller addSubview:self.backgroundImageView];
     
     _proportionCalculatorView = [[PCProportionCalculatorView alloc] initWithFrame:self.view.bounds];
     [_proportionCalculatorView setDelegate:self];
     [_proportionCalculatorView setAlpha:0];
-    [self.view addSubview:_proportionCalculatorView];
+    [_scroller addSubview:_proportionCalculatorView];
     
     _calculatorKeyboard = [[FTCalculatorKeyboardView alloc] init];
     [_calculatorKeyboard setDelegate:self];
@@ -50,27 +51,47 @@
     }];
 }
 
-#pragma mark Proportional calculator view delegate methods
 
-- (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction {
-    [UIView animateWithDuration:0.3 animations:^{
-        if (direction == PCProportionCalculatorViewDirectionMoveUp) {
-            [self.backgroundImageView setYOrigin:-(kPCHomeViewControllerMoveUpDistance + 20)];
-            [_proportionCalculatorView setYOrigin:-kPCHomeViewControllerMoveUpDistance];
-        }
-        else {
-            [self.backgroundImageView setYOrigin:-20];
-            [_proportionCalculatorView setYOrigin:0];
-        }
-    }];
+- (void)loadView {
+    [super loadView];
+    _scroller =[[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_scroller];
+    
 }
+
+#pragma mark Proportional calculator view delegate methods
+/*
+ - (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction {
+ [UIView animateWithDuration:0.3 animations:^{
+ if (direction == PCProportionCalculatorViewDirectionMoveUp) {
+ [self.backgroundImageView setYOrigin:-(kPCHomeViewControllerMoveUpDistance + 20)];
+ [_proportionCalculatorView setYOrigin:-kPCHomeViewControllerMoveUpDistance];
+ }
+ else {
+ //[self.backgroundImageView setYOrigin:-20];
+ //[_proportionCalculatorView setYOrigin:0];
+ }
+ }];
+ }
+ */
+
 
 - (void)proportionCalculatorViewRequestsKeyboard:(PCProportionCalculatorView *)view {
     [_calculatorKeyboard show];
+    if (![self isBigPhone]) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [_scroller setContentOffset:CGPointMake(0, 93)];
+        }];
+    }
 }
 
 - (void)proportionCalculatorViewRequestsKeyboardToBeDismissed:(PCProportionCalculatorView *)view {
     [_calculatorKeyboard hide];
+    if (![self isBigPhone]) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [_scroller setContentOffset:CGPointMake(0, 0)];
+        }];
+    }
 }
 
 #pragma mark Custom Keyboard delegate methods
@@ -104,9 +125,9 @@
      -0.000...000n should be possible
      0. ...abcde0....000f should be NOT possible
      0. ...a00...000b should be NOT possible if distance a-b (or a-c.. a-e) > MAX_LENGTH_DOT
-    ABCDE0000...000 possible
+     ABCDE0000...000 possible
      a.0...0bcde should be NOT possible if distance a-b (or a-c.. a-e) > MAX_LENGTH_DOT
-    */
+     */
     
     BOOL isFirstDigit0 = [zeroChecker characterAtIndex:0]==[@"0" characterAtIndex:0];
     BOOL tooManySignificantDigits = NO;
@@ -145,7 +166,7 @@
         else {
             [_proportionCalculatorView.currentlyEditedTextField setRealValueString:[string substringFromIndex:1]];
         }
-
+        
     }
     else if (key == FTCalculatorKeyboardViewSpecialKeyTypeDot) {
         NSRange isRange = [string rangeOfString:@"." options:NSCaseInsensitiveSearch];
