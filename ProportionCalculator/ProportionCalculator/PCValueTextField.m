@@ -46,8 +46,16 @@
         if (_realValueString.length<=MAX_LENGTH_DOT+adder) {
             self.text=_realValueString;
         }
-        else{
-            self.text = [NSString stringWithFormat:@"%.5g", [_realValueString doubleValue]];
+        else {
+            NSString* aux = [[_realValueString stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@"." withString:@""];
+            NSUInteger possibleExp = aux.length-1;
+            BOOL isOnlyZeroes = [aux stringByReplacingOccurrencesOfString:@"0" withString:@""].length==0;
+            if (isOnlyZeroes) {
+                self.text = [NSString stringWithFormat:@"%@0e-%d",minus?@"-":@"",possibleExp];
+            }
+            else{
+                self.text = [NSString stringWithFormat:@"%.5g", [_realValueString doubleValue]];
+            }
         }
     }
     else {
