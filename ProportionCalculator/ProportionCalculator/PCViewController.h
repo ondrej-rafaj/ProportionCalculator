@@ -11,8 +11,6 @@
 
 @interface PCViewController : UIViewController
 
-@property (nonatomic, strong) UIImageView *backgroundImageView;
-
 @property (nonatomic) BOOL isLandscape;
 
 // Positioning
@@ -22,7 +20,7 @@
 - (BOOL)isRetina;
 
 // Creating and configuring view
-- (void)setBackgroundImage:(NSString *)imageName;
+
 - (void)setupView;
 - (void)layoutElements;
 - (void)createAllElements;

@@ -25,9 +25,12 @@ typedef enum {
 
 @protocol PCProportionCalculatorViewDelegate <NSObject>
 
-- (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction;
+@required
 - (void)proportionCalculatorViewRequestsKeyboard:(PCProportionCalculatorView *)view;
 - (void)proportionCalculatorViewRequestsKeyboardToBeDismissed:(PCProportionCalculatorView *)view;
+
+@optional
+- (void)proportionCalculatorView:(PCProportionCalculatorView *)view requiresToMoveInDirection:(PCProportionCalculatorViewDirectionMove)direction;
 
 @end
 

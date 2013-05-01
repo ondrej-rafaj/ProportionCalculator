@@ -17,6 +17,10 @@
 @property (nonatomic, strong) PCProportionCalculatorView *proportionCalculatorView;
 @property (nonatomic, strong) FTCalculatorKeyboardView *calculatorKeyboard;
 @property (nonatomic, strong) UIScrollView* scroller;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
+- (void)setBackgroundImage:(NSString *)imageName;
+
 @end
 
 
@@ -28,7 +32,7 @@
 - (void)createAllElements {
     [super createAllElements];
     
-    [super setBackgroundImage:([super isBigPhone] ? @"Default-568h" : @"Default")];
+    [self setBackgroundImage:([super isBigPhone] ? @"Default-568h" : @"Default")];
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"D7D7D7"]];
     [_scroller addSubview:self.backgroundImageView];
     
@@ -40,6 +44,15 @@
     _calculatorKeyboard = [[FTCalculatorKeyboardView alloc] init];
     [_calculatorKeyboard setDelegate:self];
     [self.view addSubview:_calculatorKeyboard];
+}
+
+
+- (void)setBackgroundImage:(NSString *)imageName {
+    UIImage *img = [UIImage imageNamed:imageName];
+    _backgroundImageView = [[UIImageView alloc] initWithImage:img];
+    if (_backgroundImageView.height > self.view.height) {
+        [_backgroundImageView setYOrigin:-20];
+    }
 }
 
 #pragma mark View lifecycle

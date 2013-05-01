@@ -45,17 +45,6 @@
     
 }
 
-#pragma mark Settings
-
-- (void)setBackgroundImage:(NSString *)imageName {
-    UIImage *img = [UIImage imageNamed:imageName];
-    _backgroundImageView = [[UIImageView alloc] initWithImage:img];
-    if (_backgroundImageView.height > self.view.height) {
-        [_backgroundImageView setYOrigin:-20];
-    }
-    [self.view addSubview:_backgroundImageView];
-}
-
 #pragma mark View lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
