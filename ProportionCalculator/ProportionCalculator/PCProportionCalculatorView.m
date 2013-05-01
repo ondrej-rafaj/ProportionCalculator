@@ -398,7 +398,7 @@
         }];
         CGFloat yOrigin =(((UIView*)_valuesLabels[3]).bottom -15);
         [_calculationsLabel setYOrigin:yOrigin];
-    } completion:^(BOOL finished) {}];
+    }];
     [_currentlyEditedTextField setDefaultTextColor];
     if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboard:)]) {
         [_delegate proportionCalculatorViewRequestsKeyboard:self];
