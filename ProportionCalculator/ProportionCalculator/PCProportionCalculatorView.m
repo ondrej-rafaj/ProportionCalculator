@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIImageView *rightArrow;
 
 @property (nonatomic, strong) UILabel *calculationsLabel;
+@property (nonatomic, strong) UILabel *equationLabel;
 
 @property (nonatomic, strong) PCResultTextField *resultField;
 @property (nonatomic, strong) UILabel *explanationLabel;
@@ -39,47 +40,97 @@
     __block BOOL ok=YES;
     [_valuesFields enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if (((PCValueTextField*)obj).text.length==0) {
-            ok=YES;
+            ok=NO;
             *stop=YES;
         }
     }];
     return ok;
 }
 
-- (void)showRightLabels {
-    __block NSUInteger currentCounter=0;
-    NSArray* letterArray = @[@"a",@"b",@"c"];
-    [_valuesLabels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (idx==(_currentXField-1)) {
-            [obj setText:@"x"];
-            [_valuesFields[idx] disable:YES];
+- (double)xValueForIndex:(NSUInteger)index {
+    double a = [[_valuesFields[0] realValueString] doubleValue];
+    double b = [[_valuesFields[1] realValueString] doubleValue];
+    double c = [[_valuesFields[2] realValueString] doubleValue];
+    double d = [[_valuesFields[3] realValueString] doubleValue];
+    
+    double ret=0.0,aux=0.0;
+    if (_propType==PCProportionCalculatorViewPropTypeProportional) {
+        if (index>0&&index<3) {
+            aux = (index%2)?c:b;
+            ret = a*d/aux;
         }
         else {
-            [obj setText:letterArray[currentCounter]];
-            [_valuesFields[idx] disable:NO];
-            currentCounter++;
+            aux = (index%2)?a:d;
+            ret = b*c/aux;
         }
-    }];
-    
-    NSString *calc;
-    if (_propType == PCProportionCalculatorViewPropTypeProportional) {
-        if (_currentXField == 1) calc = @"x = ((b * a) / c)";
-        else if (_currentXField == 2) calc = @"x = ((a * c) / b)";
-        else if (_currentXField == 3) calc = @"x = ((a * c) / b)";
-        else if (_currentXField == 4) calc = @"x = ((c * b) / a)";
     }
     else {
-        if (_currentXField == 1) calc = @"x = ((b * c) / a)";
-        else if (_currentXField == 2) calc = @"x = ((b * c) / a)";
-        else if (_currentXField == 3) calc = @"x = ((a * b) / c)";
-        else if (_currentXField == 4) calc = @"x = ((a * b) / c)";
+        if (index>1) {
+            aux= (index%2)?c:d;
+            ret=a*b/aux;
+        }
+        else {
+            aux= (index%2)?a:b;
+            ret =c*d/aux;
+        }
     }
+    return ret;
+}
+
+
+
+- (NSString*)propCalculationTextForIndex:(NSUInteger)index {
+    NSArray* letterArray = @[@"a",@"b",@"c",@"d"];
+    if (_propType == PCProportionCalculatorViewPropTypeProportional) {
+        if (index>0&&index<3) {
+            NSUInteger auxIndex = (index%2)?2:1;
+            return [NSString stringWithFormat:@"x = ((a * d) / %@)",letterArray[auxIndex]];
+        }
+        else {
+            NSUInteger auxIndex = (index%2)?0:3;
+            return [NSString stringWithFormat:@"x = ((b * c) / %@)",letterArray[auxIndex]];
+        }
+    }
+    if (index>1) {
+        NSUInteger auxIndex = (index%2)?2:3;
+        return [NSString stringWithFormat:@"x = ((a * b) / %@)",letterArray[auxIndex]];
+    }
+    else {
+        NSUInteger auxIndex = (index%2)?0:1;
+        return [NSString stringWithFormat:@"x = ((c * d) / %@)",letterArray[auxIndex]];
+    }
+}
+
+- (NSString*)propEquationTextForIndex:(NSUInteger)index {
+    NSMutableArray* l = [@[@"a",@"b",@"c",@"d"] mutableCopy];
+    l[index]=@"x";
+    if (_propType == PCProportionCalculatorViewPropTypeProportional) {
+        return [NSString stringWithFormat:@"%@ : %@ = %@ : %@",l[0],l[2],l[1],l[3]];
+    }
+    return [NSString stringWithFormat:@"%@ : %@ = %@ : %@",l[0],l[2],l[3],l[1]];
+}
+
+
+- (void)showRightLabels {
+    NSMutableArray* l = [@[@"a",@"b",@"c",@"d"] mutableCopy];
+    l[_currentXField-1]=@"x";
+    [_valuesLabels enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setText:l[idx]];
+        [_valuesFields[idx] disable:(idx==(_currentXField-1))];
+    }];
+    
+    NSString *calc = [self propCalculationTextForIndex:_currentXField-1];
+    NSString* eq = [self propEquationTextForIndex:_currentXField-1];
+    
     [UIView animateWithDuration:0.15 animations:^{
         [_calculationsLabel setAlpha:0];
+        [_equationLabel setAlpha:0];
     } completion:^(BOOL finished) {
         [_calculationsLabel setText:calc];
+        [_equationLabel setText:eq];
         [UIView animateWithDuration:0.15 animations:^{
             [_calculationsLabel setAlpha:1];
+            [_equationLabel setAlpha:1];
         }];
     }];
     
@@ -115,48 +166,7 @@
 
 - (void)recalculate {
     if ([self allValuesAvailable]) {
-        double a = [[_valuesFields[0] realValueString] doubleValue];
-        double b = [[_valuesFields[1] realValueString] doubleValue];
-        double c = [[_valuesFields[2] realValueString] doubleValue];
-        double d = [[_valuesFields[3] realValueString] doubleValue];
-        double x = 0;
-        NSString *calc;
-        if (_propType == PCProportionCalculatorViewPropTypeProportional) {
-            if (_currentXField == 1) {
-                x = ((c * b) / d);
-                calc = @"x = ((b * a) / c)";
-            }
-            else if (_currentXField == 2) {
-                x = ((a * d) / c);
-                calc = @"x = ((a * c) / b)";
-            }
-            else if (_currentXField == 3) {
-                x = ((a * d) / b);
-                calc = @"x = ((a * c) / b)";
-            }
-            else if (_currentXField == 4) {
-                x = ((c * b) / a);
-                calc = @"x = ((c * b) / a)";
-            }
-        }
-        else {
-            if (_currentXField == 1) {
-                x = ((c * d) / b);
-                calc = @"x = ((b * c) / a)";
-            }
-            else if (_currentXField == 2) {
-                x = ((c * d) / a);
-                calc = @"x = ((b * c) / a)";
-            }
-            else if (_currentXField == 3) {
-                x = ((a * b) / d);
-                calc = @"x = ((a * b) / c)";
-            }
-            else if (_currentXField == 4) {
-                x = ((a * b) / c);
-                calc = @"x = ((a * b) / c)";
-            }
-        }
+        double x = [self xValueForIndex:_currentXField-1];
         [_resultField setText:[NSString stringWithFormat:@"%.5g", x]];
     }
     else {
@@ -270,6 +280,15 @@
     [self addSubview:_calculationsLabel];
 }
 
+- (void)createEquationLabel {
+    _equationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (((UIView*)_valuesLabels[0]).yOrigin - 10), 320, 20)];
+    [_equationLabel setTextColor:[UIColor colorWithWhite:0 alpha:0.2]];
+    [_equationLabel setBackgroundColor:[UIColor clearColor]];
+    [_equationLabel setTextAlignment:NSTextAlignmentCenter];
+    [_equationLabel setFont:[UIFont boldSystemFontOfSize:12]];
+    [self addSubview:_equationLabel];
+}
+
 - (void)createResultSection {
     _resultField = [[PCResultTextField alloc] initWithFrame:CGRectMake(0, (self.height - 82), 200, 62)];
     [_resultField setBackground:[UIImage imageNamed:@"PC_result_field"]];
@@ -312,6 +331,7 @@
     [self createCalculationsLabel];
     [self createResultSection];
     [self addGestureRecognizers];
+    [self createEquationLabel];
 }
 
 #pragma mark Gesture recognizers
@@ -378,9 +398,7 @@
         }];
         CGFloat yOrigin =(((UIView*)_valuesLabels[3]).bottom -15);
         [_calculationsLabel setYOrigin:yOrigin];
-    } completion:^(BOOL finished) {
-        
-    }];
+    } completion:^(BOOL finished) {}];
     [_currentlyEditedTextField setDefaultTextColor];
     if ([_delegate respondsToSelector:@selector(proportionCalculatorViewRequestsKeyboard:)]) {
         [_delegate proportionCalculatorViewRequestsKeyboard:self];
