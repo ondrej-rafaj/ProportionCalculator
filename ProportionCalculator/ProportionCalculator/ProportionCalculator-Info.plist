@@ -14,11 +14,11 @@
 		<string>Icon@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.fuerteint.proportioncalc.enterprise</string>
+	<string>com.fuerteint.iproportions</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Proportions</string>
+	<string>iProportions</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

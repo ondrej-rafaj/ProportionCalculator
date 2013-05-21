@@ -119,7 +119,7 @@
 		15B49CD8170F21AC00E97D38 /* PC_ico_minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PC_ico_minus@2x.png"; sourceTree = "<group>"; };
 		4BD8CD9B1726E2F200B30F94 /* UIView+AttributeByObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AttributeByObject.h"; sourceTree = "<group>"; };
 		4BD8CD9C1726E2F200B30F94 /* UIView+AttributeByObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AttributeByObject.m"; sourceTree = "<group>"; };
-		549D18FA16FF985200EE05BF /* ProportionCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProportionCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		549D18FA16FF985200EE05BF /* iProportions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iProportions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		549D18FD16FF985200EE05BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		549D18FF16FF985200EE05BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		549D190116FF985200EE05BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -233,7 +233,7 @@
 		549D18FB16FF985200EE05BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				549D18FA16FF985200EE05BF /* ProportionCalculator.app */,
+				549D18FA16FF985200EE05BF /* iProportions.app */,
 				549D192016FF985300EE05BF /* ProportionCalculatorTests.octest */,
 			);
 			name = Products;
@@ -487,7 +487,7 @@
 			);
 			name = ProportionCalculator;
 			productName = ProportionCalculator;
-			productReference = 549D18FA16FF985200EE05BF /* ProportionCalculator.app */;
+			productReference = 549D18FA16FF985200EE05BF /* iProportions.app */;
 			productType = "com.apple.product-type.application";
 		};
 		549D191F16FF985300EE05BF /* ProportionCalculatorTests */ = {
@@ -780,7 +780,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iProportions;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
@@ -790,6 +790,8 @@
 		549D193416FF985300EE05BF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuerte Int Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuerte Int Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
@@ -798,7 +800,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iProportions;
+				PROVISIONING_PROFILE = "278D306B-FD14-43C0-A301-747911D8554F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "278D306B-FD14-43C0-A301-747911D8554F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AppStore;
@@ -884,7 +888,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iProportions;
 				PROVISIONING_PROFILE = "2DE2CF53-7583-45A3-ACD3-DAE46531D34F";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DE2CF53-7583-45A3-ACD3-DAE46531D34F";
 				WRAPPER_EXTENSION = app;
