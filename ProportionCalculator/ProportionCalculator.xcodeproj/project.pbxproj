@@ -878,8 +878,8 @@
 		549D19A816FFE5EB00EE05BF /* Enterprise */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fuerte Int Ltd";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fuerte Int Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProportionCalculator/ProportionCalculator-Prefix.pch";
 				INFOPLIST_FILE = "ProportionCalculator/ProportionCalculator-Info.plist";
@@ -889,8 +889,8 @@
 					"\"$(SRCROOT)/../Thirdparty/Flurry\"",
 				);
 				PRODUCT_NAME = iProportions;
-				PROVISIONING_PROFILE = "2DE2CF53-7583-45A3-ACD3-DAE46531D34F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DE2CF53-7583-45A3-ACD3-DAE46531D34F";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Enterprise;
